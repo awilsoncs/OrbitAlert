@@ -1,0 +1,4 @@
+area
+type/bridge
+name/Bridge
+description/The dark expanse of space stretches away from the thick windows of the bridge, horizonless… never ending. The main control consoles rest beneath the massive windows and stretch along the oval shape of the metal walls. The fluorescent lights on the ceiling above spark and pop with an electric sizzle as they struggle to live. It seems as if the eternal silence of the void on the other side of the window had eradicated the normal beeping of terminals and hurried footsteps of the bridge crew. Now the only sign that there had been other people are the smears and splashes of blood and the crusty bloody footprints that made their way through out the Bridge.

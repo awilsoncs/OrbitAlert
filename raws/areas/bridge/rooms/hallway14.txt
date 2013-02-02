@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/Bullet casings litter the floor of the corridor. Among the empty little cylinders crisp maroon blood is trickled through out the passage.
