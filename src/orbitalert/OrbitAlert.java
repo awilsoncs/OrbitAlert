@@ -4,9 +4,7 @@
  */
 package orbitalert;
 
-import orbitalert.Areas.Area;
 import orbitalert.Areas.Room;
-import orbitalert.Areas.AreaLoader;
 
 /**
  *

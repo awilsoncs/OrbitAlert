@@ -4,10 +4,15 @@
  */
 package orbitalert.Objects.Mobs;
 
+import orbitalert.Objects.Obj;
+
 /**
  *
  * @author Aaron
  */
 public class Player extends Mob {
-    public abstract
+    @Override
+    public void behavior(){
+        
+    }
 }

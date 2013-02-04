@@ -32,7 +32,7 @@ public class World {
 
         //Build the world here.
         areas = new ArrayList<>();
-        map = makeMap(this.mapSize);
+        map = makeMap(mapSize);
 
         //Pick a starting cell.
         Cell mapDimensions = map.getDimensions();
@@ -47,6 +47,8 @@ public class World {
         
         //pass in currentCell, currentCell, and the area into this.buildWorld.
         buildWorld(startCell, startCell, newArea);
+        
+        GameHelper.startGame(startCell)
     }
 
     private void buildWorld(Cell currentCell, Cell previousCell, Area area){
@@ -86,8 +88,8 @@ public class World {
 
     //Makers here.
     private Map makeMap(Cell mapSize) {
-        Map map = new Map(mapSize);
-        return map;
+        Map newMap = new Map(mapSize);
+        return newMap;
     }
 
     //Getters here.

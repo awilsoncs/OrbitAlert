@@ -61,6 +61,7 @@ public abstract class Mob extends Obj implements Container {
     private boolean walk(String direction){
         return false;
     };
+    
     //private String getDirectionTo(Obj object){
     //    This is going to need to use A* pathfinding.
     
@@ -94,10 +95,28 @@ public abstract class Mob extends Obj implements Container {
             return false;
         }
     };
+    
     @Override
     public ArrayList<Obj> getContents(){
         return this.contents;
     };
+    
+    @Override
+    public boolean add(Obj obj){
+        contents.add(obj);
+        return true;
+    };
+    
+    @Override
+    public boolean remove(Obj obj){
+        if (contents.contains(obj)) {
+            contents.remove(obj);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     //Environment interaction
     //Need to consider how the Mob can interact with the environment.
     //Social (Cosmetic)
