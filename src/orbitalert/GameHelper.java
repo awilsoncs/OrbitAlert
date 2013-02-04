@@ -1,6 +1,7 @@
 package orbitalert;
 
 import java.io.*;
+import orbitalert.Objects.Obj;
 import org.apache.commons.lang3.text.WordUtils;
 
 /**
@@ -8,7 +9,14 @@ import org.apache.commons.lang3.text.WordUtils;
  * @author Aaron
  */
 public class GameHelper {
-
+    public static void startGame(World world){
+        boolean playGame = true;
+        while(playGame){
+            for (Obj obj:world.getObjs()){
+                obj.tick();
+            }
+        }
+    }
     /**
      *
      * @param output
@@ -36,6 +44,11 @@ public class GameHelper {
         return input;
     }
 
+    /**
+     *
+     * @param string
+     * @return
+     */
     public static String input(String string) {
         System.out.print(string);
         return input();

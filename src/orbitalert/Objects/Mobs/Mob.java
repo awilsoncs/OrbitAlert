@@ -51,7 +51,10 @@ public abstract class Mob extends Obj implements Container {
             return false;
         }
     };
-    
+    @Override
+    public void tick(){
+        behavior();
+    }
     /**
      *
      */
@@ -105,8 +108,7 @@ public abstract class Mob extends Obj implements Container {
     private boolean use(Useable item){
         return false;
     };
-    
-    //Container Implementation
+
     /**
      *
      * @param obj

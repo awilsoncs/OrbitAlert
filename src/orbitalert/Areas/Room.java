@@ -73,6 +73,7 @@ public class Room implements Container {
     @Override
     public boolean add(Obj obj) {
         contents.add(obj);
+        obj.setLoc(this);
         return true;
     }
 
@@ -105,11 +106,15 @@ public class Room implements Container {
 
     public String getSummary() {
         String output = "";
-        output += "-----Room Summary-----\n";
         output += this.getName() + "\n";
         output += this.getDescription();
         for (Obj object:getContents()){
             output += " " + object.getShortDescription();
+        }
+        
+        output += " You see exits in the following directions: ";
+        for(String direction:exitMap.keySet()){
+            output += direction + ", ";
         }
         return output;
     }

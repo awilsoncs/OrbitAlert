@@ -46,7 +46,7 @@ public abstract class Obj{
     public Container getLoc() {
         return loc;
     }
-    private void setLoc(Container container) {
+    public void setLoc(Container container) {
         loc = container;
     }
     public boolean move(Container container) {
@@ -59,5 +59,8 @@ public abstract class Obj{
         } else {
             return false;
         }
+    }
+
+    public void tick() {
     }
 }

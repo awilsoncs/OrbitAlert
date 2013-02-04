@@ -4,6 +4,7 @@
  */
 package orbitalert.Objects.Mobs;
 
+import orbitalert.Areas.Room;
 import orbitalert.GameHelper;
 
 /**
@@ -11,15 +12,22 @@ import orbitalert.GameHelper;
  * @author Aaron
  */
 public class Player extends Mob {
+    
+    public Player(){
+        setName("Player");
+        setShortDescription("There is a player here");
+    }
     /**
      *
      */
     @Override
     public void behavior(){
-        GameHelper.output("Player pinged");
-        GameHelper.output("What do you do?");
+        Room location = (Room) getLoc();
+        GameHelper.output(location.getSummary());
+        GameHelper.output("\nWhat do you do?");
         String action = GameHelper.input();
-        GameHelper.output("Action Recieved");
-        GameHelper.output(action);
+        if(action.equals("exit") || action.equals("quit")){
+            System.exit(1);
+        }
     }
 }

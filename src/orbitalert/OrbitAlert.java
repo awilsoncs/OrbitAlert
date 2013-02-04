@@ -14,6 +14,10 @@ public class OrbitAlert {
      */
     public static void main(String[] args) {
         for (String arg : args) {
+            if(arg.equals("play")){
+                World newWorld = new World();
+                GameHelper.startGame(newWorld);
+            }
             if(arg.equals("worldtest")){
                 OrbitAlert game = new OrbitAlert();
                 game.worldTest();

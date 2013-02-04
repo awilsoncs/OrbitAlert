@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import orbitalert.Areas.Area;
 import orbitalert.Areas.AreaLoader;
 import orbitalert.Areas.Room;
+import orbitalert.Objects.Mobs.Player;
 import orbitalert.Objects.Obj;
 
 /**
@@ -33,9 +34,9 @@ public class World {
 
         //Pick a starting cell.
         Cell mapDimensions = map.getDimensions();
-        int startX = (int) Math.random() * mapDimensions.getX();
-        int startY = (int) Math.random() * mapDimensions.getY();
-        int startZ = (int) Math.random() * mapDimensions.getZ();
+        int startX = (int) (Math.random() * mapDimensions.getX());
+        int startY = (int) (Math.random() * mapDimensions.getY());
+        int startZ = (int) (Math.random() * mapDimensions.getZ());
         Cell startCell = new Cell(startX, startY, startZ);
         
         //create a new MedBay area.
@@ -44,6 +45,8 @@ public class World {
         
         //pass in currentCell, currentCell, and the area into this.buildWorld.
         buildWorld(startCell, startCell, newArea);
+        
+        map.getRoom(startCell).add(new Player());
         for (Area area:areas){
             for (Room room: area.getRooms()){
                 for (Obj obj: room.getContents()){
