@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package orbitalert;
 import java.util.ArrayList;
 import orbitalert.Areas.Area;
@@ -31,8 +27,9 @@ public class World {
     public World() {
 
         //Build the world here.
-        areas = new ArrayList<>();
         map = makeMap(mapSize);
+        areas = new ArrayList<>();
+        objs = new ArrayList<>();
 
         //Pick a starting cell.
         Cell mapDimensions = map.getDimensions();
@@ -47,15 +44,19 @@ public class World {
         
         //pass in currentCell, currentCell, and the area into this.buildWorld.
         buildWorld(startCell, startCell, newArea);
-        
-        GameHelper.startGame(startCell)
+        for (Area area:areas){
+            for (Room room: area.getRooms()){
+                for (Obj obj: room.getContents()){
+                    addObj(obj);
+                }
+            }
+        }
     }
 
     private void buildWorld(Cell currentCell, Cell previousCell, Area area){
         Room newRoom;
         int roll = (int) (Math.random()*4);
-        //System.out.println(Integer.toString(roll));
-        System.out.println(Integer.toString(area.getRooms().size()));
+        //GameHelper.output(Integer.toString(roll));
         if (area.getRooms().size() > 3 && roll == 3) {
             //Locking the area down.
             Area oldArea = area;
@@ -101,5 +102,8 @@ public class World {
     }
     public ArrayList<Obj> getObjs(){
         return this.objs;
+    }
+    public void addObj(Obj obj){
+        objs.add(obj);
     }
 }

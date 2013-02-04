@@ -31,9 +31,18 @@ public abstract class Mob extends Obj implements Container {
     String[] phrases;
 
     //State Control
+    /**
+     *
+     * @return
+     */
     public int getHealth(){
         return health;
     };
+    /**
+     *
+     * @param newHealth
+     * @return
+     */
     public boolean setHealth(int newHealth){
         if (newHealth >= 0) {
             health = newHealth;
@@ -43,17 +52,28 @@ public abstract class Mob extends Obj implements Container {
         }
     };
     
+    /**
+     *
+     */
     public abstract void behavior();
     //Combat Suite
     private boolean attack(Mob target){
         return false;
     };
+    /**
+     *
+     * @param damage
+     */
     public void damage(int damage){
         //Used when damage is inflicted upon this target.
     };
     private boolean getCanAttack(){
         return false;
     };
+    /**
+     *
+     * @return
+     */
     public boolean getCanBeAttacked(){
         return true;
     };
@@ -87,6 +107,11 @@ public abstract class Mob extends Obj implements Container {
     };
     
     //Container Implementation
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean canHold(Obj obj){
         if (obj instanceof Item){
@@ -96,17 +121,31 @@ public abstract class Mob extends Obj implements Container {
         }
     };
     
+    /**
+     *
+     * @return
+     */
     @Override
     public ArrayList<Obj> getContents(){
         return this.contents;
     };
     
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean add(Obj obj){
         contents.add(obj);
         return true;
     };
     
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean remove(Obj obj){
         if (contents.contains(obj)) {

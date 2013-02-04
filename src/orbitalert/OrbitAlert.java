@@ -1,10 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package orbitalert;
 
 import orbitalert.Areas.Room;
+import orbitalert.Objects.Obj;
 
 /**
  *
@@ -29,6 +26,9 @@ public class OrbitAlert {
                 OrbitAlert game = new OrbitAlert();
                 game.itemTest();
             }
+            if(arg.equals("gamehelpertest")){
+                gameHelperTest();
+            }
         }        
     }
     
@@ -38,12 +38,14 @@ public class OrbitAlert {
     }
     
     private void itemTest() {
-        orbitalert.Objects.Items.ItemTester itemTest = new orbitalert.Objects.Items.ItemTester();
-        itemTest.testItems();
+        World newWorld = new World();
+        for (Obj obj : newWorld.getObjs()){
+            GameHelper.output(obj.getName());
+        }
     }
     
     private void worldTest() {
-        System.out.println("Start worldTest");
+        GameHelper.output("Start worldTest");
         World newWorld = new World();
         Map worldMap = newWorld.getMap();
         Cell dimensions = worldMap.getDimensions();
@@ -57,17 +59,24 @@ public class OrbitAlert {
                     loc += Integer.toString(i) + ", ";
                     loc += Integer.toString(j) + ", ";
                     loc += Integer.toString(k);
-                    System.out.println(loc);
+                    GameHelper.output(loc);
                     Cell checkCell = new Cell(i,j,k);
                     Room checkRoom = worldMap.getRoom(checkCell);
                     if (checkRoom != null){
                         String output = checkRoom.getSummary();
-                        System.out.println(output);
+                        GameHelper.output(output);
                     } else {
-                        System.out.println("Null Cell");
+                        GameHelper.output("Null Cell");
                     }
                 }
             }
         }
+    }
+    
+    private static void gameHelperTest() {
+        GameHelper.output("GameHelper test");
+        String input = GameHelper.input();
+        GameHelper.output("Input: " + input);
+        GameHelper.input("Next input: ");
     }
 }

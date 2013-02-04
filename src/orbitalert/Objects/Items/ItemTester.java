@@ -3,6 +3,9 @@
  * and open the template in the editor.
  */
 package orbitalert.Objects.Items;
+
+import orbitalert.GameHelper;
+
 /**
  *
  * @author Aaron
@@ -10,8 +13,8 @@ package orbitalert.Objects.Items;
 public class ItemTester {
     public void testItems(){
         Item newItem = ItemLoader.loadItem("medical");
-        System.out.println(newItem.getName());
-        System.out.println(newItem.getShortDescription());
-        System.out.println(newItem.getLongDescription());
+        GameHelper.output(newItem.getName());
+        GameHelper.output(newItem.getShortDescription());
+        GameHelper.output(newItem.getLongDescription());
     }
 }

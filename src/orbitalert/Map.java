@@ -1,10 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package orbitalert;
-import orbitalert.Areas.Room;
 import java.util.ArrayList;
+import orbitalert.Areas.Room;
 
 /**
  *
@@ -35,7 +31,7 @@ public class Map  {
                 int z = cell.getZ();
                 mapArray[x][y][z] = room;
             } else {
-                System.out.println("Error: Attempting to write room in non-null cell.");
+                GameHelper.output("Error: Attempting to write room in non-null cell.");
             }
         }
 
@@ -69,13 +65,14 @@ public class Map  {
             return null;
         }
 
+    @SuppressWarnings("empty-statement")
         public void linkRooms(Cell previousCell, Cell currentCell) {;
             String direction = getDirection(previousCell, currentCell);
             //All directions are previousRoom exits.
             Room previousRoom = getRoom(previousCell);
-            //System.out.println(previousRoom.getName());
+            //GameHelper.output(previousRoom.getName());
             Room currentRoom = getRoom(currentCell);
-           //System.out.println(currentRoom.getName());
+           //GameHelper.output(currentRoom.getName());
             if (direction != null && !direction.isEmpty()) {
                 previousRoom.addExit(direction);
                 switch (direction) {
@@ -116,7 +113,7 @@ public class Map  {
             int maxY = getDimensions().getY();
             int maxZ = getDimensions().getZ();
             //Gather 6 neighbors.
-            ArrayList<Cell> neighbors = new ArrayList<Cell>();
+            ArrayList<Cell> neighbors = new ArrayList<>();
             if (x > 0) {
                 Cell newCell = new Cell(x-1, y, z);
                 neighbors.add(newCell);

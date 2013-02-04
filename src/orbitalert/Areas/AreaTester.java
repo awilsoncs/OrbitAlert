@@ -5,6 +5,7 @@
 package orbitalert.Areas;
 
 import java.util.ArrayList;
+import orbitalert.GameHelper;
 import orbitalert.Objects.Obj;
 
 /**
@@ -14,11 +15,11 @@ import orbitalert.Objects.Obj;
 public class AreaTester {
     public void testAreas() {
        Area newArea = AreaLoader.loadArea("medical");
-       System.out.println(newArea.getName());
-       System.out.println(newArea.getDescription());
+       GameHelper.output(newArea.getName());
+       GameHelper.output(newArea.getDescription());
        
        Room newRoom = RoomLoader.loadRoom(newArea.getType());
-       System.out.println(newRoom.getSummary());
+       GameHelper.output(newRoom.getSummary());
        
     }
 }
