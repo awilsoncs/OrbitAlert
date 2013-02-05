@@ -4,6 +4,8 @@
  */
 package orbitalert.Objects;
 
+import orbitalert.World;
+
 /**
  *
  * @author Aaron
@@ -15,6 +17,15 @@ public abstract class Obj{
     String name;
     String shortDescription;
     String longDescription;
+    private World world;
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
     
     public void setName(String newName){
         name = newName;

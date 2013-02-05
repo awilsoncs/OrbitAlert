@@ -42,6 +42,7 @@ public class World {
         //create a new MedBay area.
         Area newArea = AreaLoader.loadArea("medical");
         this.areas.add(newArea);
+        newArea.setWorld(this);
         
         //pass in currentCell, currentCell, and the area into this.buildWorld.
         buildWorld(startCell, startCell, newArea);
@@ -65,9 +66,17 @@ public class World {
             Area oldArea = area;
             area = AreaLoader.loadArea();
             areas.add(area);
+            area.setWorld(this);
+            
             newRoom = area.makeRoom();
             map.addRoom(currentCell, newRoom);
             Task newTask = TaskBuilder.buildTask(oldArea);
+            
+            System.out.println("Linking Rooms:");
+            System.out.println(previousCell.getSummary());
+            System.out.println(currentCell.getSummary());
+            System.out.println(map.getDirection(previousCell, currentCell));
+            
             map.linkRooms(previousCell, currentCell, newTask);
             //This should be linked directly to a door, not a room;
         } else {
@@ -79,7 +88,7 @@ public class World {
         ArrayList<Cell> neighbors = map.getNeighbors(currentCell);
         while (neighbors.size() > 0 && roomCount > 0) {
             //Pop a random neighbor.
-            int popIndex = (int) Math.random() * neighbors.size();
+            int popIndex = (int) (Math.random() * neighbors.size());
             Cell nextCell = neighbors.get(popIndex);
             neighbors.remove(nextCell);
 

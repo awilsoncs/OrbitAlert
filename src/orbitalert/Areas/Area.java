@@ -2,6 +2,7 @@ package orbitalert.Areas;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import orbitalert.World;
 
 /**
  *
@@ -15,8 +16,9 @@ public class Area {
     private ArrayList<String> roomTypes;
     private ArrayList<Room> areaRooms;
     private ArrayList<Room> areaDamagedRooms;
+    private World world;
     //private ArrayList<Mob> areaMobs;
-    
+
     public Area(){
         roomTypes = new ArrayList<>();
         areaRooms = new ArrayList<>();
@@ -30,6 +32,14 @@ public class Area {
         roomTypes = new ArrayList<>();
         areaRooms = new ArrayList<>();
         areaDamagedRooms = new ArrayList<>();
+    }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
     }
     
     public void setType(String newType){
@@ -74,6 +84,7 @@ public class Area {
     public Room makeRoom(){
         Room newRoom = RoomLoader.loadRoom(type);
         addRoom(newRoom);
+        newRoom.setWorld(world);
         return newRoom;
     };
 }

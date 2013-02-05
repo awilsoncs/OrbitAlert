@@ -4,20 +4,24 @@
  */
 package orbitalert.Objects.Mobs;
 import java.util.ArrayList;
+import orbitalert.Areas.Room;
+import orbitalert.Cell;
+import orbitalert.Map;
 import orbitalert.Objects.Container;
 import orbitalert.Objects.Items.Item;
 import orbitalert.Objects.Obj;
 import orbitalert.Objects.Useable;
+import orbitalert.World;
 
 /**
  *
  * @author Aaron
  */
 public abstract class Mob extends Obj implements Container {
-    int health;
-    int actionsPerTick;
-    int attackDamage;
-    int damageReduction;
+    private int health;
+    private int actionsPerTick;
+    private int attackDamage;
+    private int damageReduction;
     boolean canAttack;
     boolean canBeAttacked;
     ArrayList<Obj> contents;
@@ -29,6 +33,8 @@ public abstract class Mob extends Obj implements Container {
     String[] damagedPhrases;
     String[] diesPhrases;
     String[] phrases;
+    private World world;
+
 
     //State Control
     /**
@@ -81,10 +87,43 @@ public abstract class Mob extends Obj implements Container {
         return true;
     };
     //Movement Suite
-    private boolean walk(String direction){
+    public boolean walk(String direction){
+        
+        //Check for exits in that direction
+        
+        getStep(direction);
+        return true;
+    };
+    private boolean canStep(String direction){
+        Room locRoom = (Room) getLoc();
+        
         return false;
     };
-    
+    public Room getStep(String direction){
+        Room locRoom = (Room) getLoc();
+        Map map = getWorld().getMap();
+        Cell locCell = map.getCell(locRoom);
+        
+        int x = locCell.getX();
+        int y = locCell.getY();
+        int z = locCell.getZ();
+        
+        switch (direction){
+            case "north": y += 1;
+            case "south": y -= 1;
+            case "east": x += 1;
+            case "west": x -= 1;
+            case "up": z += 1;
+            case "down": z -= 1;
+        }
+        Cell newCell = new Cell(x,y,z);
+        Room newRoom = map.getRoom(newCell);
+        if(newRoom != null){
+            return newRoom;
+        } else {
+            return null;
+        }
+    };
     //private String getDirectionTo(Obj object){
     //    This is going to need to use A* pathfinding.
     

@@ -11,6 +11,7 @@ import orbitalert.Objects.Items.Item;
 import orbitalert.Objects.Items.ItemLoader;
 import orbitalert.Objects.Obj;
 import orbitalert.Task;
+import orbitalert.World;
 
 /**
  *
@@ -23,7 +24,16 @@ public class Room implements Container {
     private String roomDescription;
     private ArrayList<Obj> contents;
     private HashMap<String, Exit> exitMap;
+    private World world;
     //HashMap exit list
+
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
 
     public Room(HashMap<String, String> roomAttributes, String parentArea) {
         setName(roomAttributes.get("name"));
@@ -38,6 +48,7 @@ public class Room implements Container {
         for (;numberOfItems > 0; numberOfItems--){
             Item newItem = ItemLoader.loadItem(getParentAreaType());
             add(newItem);
+            newItem.setWorld(world);
         }
     }
 
@@ -99,8 +110,19 @@ public class Room implements Container {
     }
 
     public void addExit(String direction, Task newTask) {
+        System.out.println("Addint Exit to: ");
+        System.out.println(getName());
+        System.out.println(direction);
         if (exitMap.containsKey(direction) == false) {
             exitMap.put(direction, new Exit(newTask));
+        }
+    }
+    
+    public Exit getExit(String direction){
+        if (exitMap.containsKey(direction)){
+            return exitMap.get(direction);
+        } else {
+            return null;
         }
     }
 
@@ -109,7 +131,10 @@ public class Room implements Container {
         output += this.getName() + "\n";
         output += this.getDescription();
         for (Obj object:getContents()){
-            output += " " + object.getShortDescription();
+            String objectShortDescription = object.getShortDescription();
+            if (objectShortDescription != null) {
+                output += " " + object.getShortDescription();
+            }
         }
         
         output += " You see exits in the following directions: ";
@@ -117,25 +142,5 @@ public class Room implements Container {
             output += direction + ", ";
         }
         return output;
-    }
-
-    private class Exit {
-
-        private Task solutionTask;
-
-        public Exit() {
-        }
-
-        public Exit(Task newTask) {
-            solutionTask = newTask;
-        }
-
-        private boolean getIsOpen() {
-            if (solutionTask == null) {
-                return true;
-            } else {
-                return solutionTask.getIsSolved();
-            }
-        }
     }
 }
