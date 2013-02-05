@@ -29,14 +29,17 @@ public class Player extends Mob {
             case "exit": System.exit(1);
             case "quit": System.exit(1);
             case "north": walk("north");
-            case "east": walk("east");
-            case "west": walk("west");
-            case "south": walk("south");
+                break;
+            case "east": walk("east"); 
+                break;
+            case "west": walk("west"); 
+                break;
+            case "south": walk("south"); 
+                break;
             case "up": walk("up");
-            case "down": walk("down");
-        }
-        if(action.equals("exit") || action.equals("quit")){
-            System.exit(1);
+                break;
+            case "down": walk("down"); 
+                break;
         }
     }
 }
