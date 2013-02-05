@@ -77,11 +77,17 @@ public class Map  {
                 previousRoom.addExit(direction);
                 switch (direction) {
                     case "north": currentRoom.addExit("south");
+                            break;
                     case "east": currentRoom.addExit("west");
+                            break;
                     case "south": currentRoom.addExit("north");
+                            break;
                     case "west": currentRoom.addExit("east");
+                            break;
                     case "up": currentRoom.addExit("down");
+                            break;
                     case "down": currentRoom.addExit("up");
+                            break;
                 }
             }
         }
@@ -95,11 +101,17 @@ public class Map  {
                 previousRoom.addExit(direction, newTask);
                 switch (direction) {
                     case "north": currentRoom.addExit("south", newTask);
+                            break;
                     case "east": currentRoom.addExit("west", newTask);
+                            break;
                     case "south": currentRoom.addExit("north", newTask);
+                            break;
                     case "west": currentRoom.addExit("east", newTask);
+                            break;
                     case "up": currentRoom.addExit("down", newTask);
+                            break;
                     case "down": currentRoom.addExit("up", newTask);
+                            break;
                 }
             }
         }
@@ -150,5 +162,18 @@ public class Map  {
                 return room;
             }
                 return null;
+        }
+        
+        public Cell getCell(Room room){
+            for(int x = 0; x <= getDimensions().getX(); x++){
+                for(int y = 0; y <= getDimensions().getY(); y++){
+                    for(int z = 0; z <= getDimensions().getZ(); z++){
+                        if(mapArray[x][y][z] == room){
+                            return new Cell(x,y,z);
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
