@@ -9,6 +9,10 @@ import org.apache.commons.lang3.text.WordUtils;
  * @author Aaron
  */
 public class GameHelper {
+    /**
+     *
+     * @param world
+     */
     public static void startGame(World world){
         boolean playGame = true;
         while(playGame){

@@ -10,7 +10,7 @@ import orbitalert.Task;
  *
  * @author Aaron
  */
-class Exit {
+public class Exit {
     private Task solutionTask;
 
     public Exit(){
@@ -20,7 +20,7 @@ class Exit {
         solutionTask = newTask;
     }
 
-    private boolean getIsOpen() {
+    public boolean getIsOpen() {
         if (solutionTask == null) {
             return true;
         } else {

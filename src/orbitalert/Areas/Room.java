@@ -110,9 +110,6 @@ public class Room implements Container {
     }
 
     public void addExit(String direction, Task newTask) {
-        System.out.println("Addint Exit to: ");
-        System.out.println(getName());
-        System.out.println(direction);
         if (exitMap.containsKey(direction) == false) {
             exitMap.put(direction, new Exit(newTask));
         }

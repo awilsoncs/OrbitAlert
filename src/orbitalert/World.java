@@ -47,7 +47,9 @@ public class World {
         //pass in currentCell, currentCell, and the area into this.buildWorld.
         buildWorld(startCell, startCell, newArea);
         
-        map.getRoom(startCell).add(new Player());
+        Player newPlayer = new Player();
+        newPlayer.setWorld(this);
+        map.getRoom(startCell).add(newPlayer);
         for (Area area:areas){
             for (Room room: area.getRooms()){
                 for (Obj obj: room.getContents()){
@@ -71,11 +73,6 @@ public class World {
             newRoom = area.makeRoom();
             map.addRoom(currentCell, newRoom);
             Task newTask = TaskBuilder.buildTask(oldArea);
-            
-            System.out.println("Linking Rooms:");
-            System.out.println(previousCell.getSummary());
-            System.out.println(currentCell.getSummary());
-            System.out.println(map.getDirection(previousCell, currentCell));
             
             map.linkRooms(previousCell, currentCell, newTask);
             //This should be linked directly to a door, not a room;
