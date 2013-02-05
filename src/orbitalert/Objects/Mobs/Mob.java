@@ -1,9 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package orbitalert.Objects.Mobs;
+
 import java.util.ArrayList;
+import orbitalert.Areas.Exit;
 import orbitalert.Areas.Room;
 import orbitalert.Cell;
 import orbitalert.Map;
@@ -90,15 +88,22 @@ public abstract class Mob extends Obj implements Container {
     public boolean walk(String direction){
         
         //Check for exits in that direction
-        
-        getStep(direction);
+        if(canStep(direction)){
+            Room nextStep = getStep(direction);
+            move(nextStep);
+        }
         return true;
     };
+    
     private boolean canStep(String direction){
         Room locRoom = (Room) getLoc();
-        
+        Exit roomExit = locRoom.getExit(direction);
+        if (roomExit.getIsOpen()){
+            return true;
+        }
         return false;
     };
+    
     public Room getStep(String direction){
         Room locRoom = (Room) getLoc();
         Map map = getWorld().getMap();
@@ -109,12 +114,18 @@ public abstract class Mob extends Obj implements Container {
         int z = locCell.getZ();
         
         switch (direction){
-            case "north": y += 1;
+            case "north": y += 1; 
+                break;
             case "south": y -= 1;
+                break;
             case "east": x += 1;
+                break;
             case "west": x -= 1;
+                break;
             case "up": z += 1;
+                break;
             case "down": z -= 1;
+                break;                
         }
         Cell newCell = new Cell(x,y,z);
         Room newRoom = map.getRoom(newCell);
