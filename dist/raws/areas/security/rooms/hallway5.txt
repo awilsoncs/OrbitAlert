@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/From beneath the, dimly lit, passages’ grating a rhythmic metal clinking emerges, echoing down long the walls.

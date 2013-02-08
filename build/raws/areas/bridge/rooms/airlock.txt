@@ -1,0 +1,3 @@
+room
+name/Bridge: Airlock
+description/Yellow space suits hang along the white walls leading towards a thick hatch opening out towards The Neptune’s outer skin.

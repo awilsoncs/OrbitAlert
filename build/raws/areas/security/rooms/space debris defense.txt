@@ -1,0 +1,3 @@
+room
+name/Security: Space Debris Defense
+description/The room contains the console that controls and maintains the outer turrets, preventing dangerous space debris from impact. A single screen remains on. It looks like someone was in the middle of some calibrations…

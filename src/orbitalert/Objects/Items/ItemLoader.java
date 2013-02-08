@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import orbitalert.OrbitAlert;
 
 /**
  *
@@ -18,11 +19,12 @@ import java.util.HashMap;
 public class ItemLoader {
 
     private static File chooseItemFile(String areaType){
-        File itemsFile = new File("raws/areas/" + areaType + "/items/");
+        String path = OrbitAlert.getOrbitAlertPath();
+        File itemsFile = new File(path + "/raws/areas/" + areaType + "/items/");
         ArrayList<String> itemTypes = new ArrayList<>(
                 Arrays.asList(itemsFile.list()));
         int random = (int) (Math.random() * itemTypes.size());
-        File itemFile = new File("raws/areas/" + areaType 
+        File itemFile = new File(path + "/raws/areas/" + areaType 
                 + "/items/" + itemTypes.get(random));
         return itemFile;
     }

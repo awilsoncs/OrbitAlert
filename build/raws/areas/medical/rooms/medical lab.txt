@@ -1,0 +1,3 @@
+room
+name/Medical Bay: Medical Laboratory
+description/Steel tables follow the walls and line up in the center of the room. The equipment used for analysis of the human ailments rest along their surfaces.

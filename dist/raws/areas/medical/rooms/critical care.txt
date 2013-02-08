@@ -1,0 +1,3 @@
+room
+name/Medical Bay: Critical Care
+description/There’s a row of steel cubicles along the walls of the room, each containing a bed and monitoring consoles. In the middle of the room a crash cart is toppled over, its defibrillator laying in a pool of blood like a dead limb.

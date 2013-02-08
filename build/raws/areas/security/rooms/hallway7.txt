@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/At the center of the well lit passage a massive pool of blood rests on the surface of the steel floor tiles. Bloody boot prints aimlessly trail around.

@@ -1,0 +1,3 @@
+room
+name/Reactor: Energy
+description/The cluttered room is full of consoles lining the walls. Their surfaces filled with knobs , switches, and screens displaying the energy output and input.

@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import orbitalert.OrbitAlert;
 
 /**
  *
@@ -16,9 +17,10 @@ public abstract class RoomLoader {
         return loadRoom(areaType, chooseRoomFile(areaType));
     };
     
-    private static String chooseRoomFile(String areaType){
+    private static String chooseRoomFile(String areaType){        
         try {
-            File areaRoomsFile = new File("raws/areas/" + areaType + "/rooms/");
+            String path = OrbitAlert.getOrbitAlertPath();
+            File areaRoomsFile = new File(path + "/raws/areas/" + areaType + "/rooms/");
             ArrayList<String> roomTypes = new ArrayList<>(
                 Arrays.asList(areaRoomsFile.list()));
             //Choose weighted random room file here.
@@ -32,7 +34,8 @@ public abstract class RoomLoader {
     
     public static Room loadRoom(String areaType, String roomText){
         try {
-            File roomFile = new File("raws/areas/" + areaType 
+            String path = OrbitAlert.getOrbitAlertPath();
+            File roomFile = new File(path + "/raws/areas/" + areaType 
                     + "/rooms/" + roomText);
                     
             FileReader fileReader = new FileReader(roomFile);

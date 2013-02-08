@@ -1,0 +1,3 @@
+room
+name/Medical Bay: Pharmacy
+description/The skeletons of Glass doors hang open, the refrigeration causing one’s breath to dance away. Maroon droplets of dried blood are trickled amongst the shattered glass of the empty medicine cabinets.

@@ -1,5 +1,8 @@
 package orbitalert;
 
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import orbitalert.Areas.Room;
 import orbitalert.Objects.Obj;
 
@@ -82,5 +85,20 @@ public class OrbitAlert {
         String input = GameHelper.input();
         GameHelper.output("Input: " + input);
         GameHelper.input("Next input: ");
+    }
+    
+    public static String getOrbitAlertPath(){
+        String path = Cell.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        String decodedPath = null;
+        
+        try {
+            decodedPath = URLDecoder.decode(path, "UTF-8");
+        } catch (UnsupportedEncodingException ex) {
+            ex.printStackTrace();
+        }
+                
+        File areasFile = new File(decodedPath);
+        areasFile = new File(areasFile.getParentFile().getPath());
+        return areasFile.getPath();
     }
 }

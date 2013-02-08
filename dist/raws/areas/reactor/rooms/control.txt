@@ -1,0 +1,3 @@
+room
+name/Reactor: Control
+description/The room is dimly lit. The only source of light coming off the hologram of the reactor being projected upward from between a large oval console that nearly fills the entire room.

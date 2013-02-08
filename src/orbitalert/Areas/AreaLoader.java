@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import orbitalert.OrbitAlert;
 
 /**
  * This class is responsible for loading an area from raw files.
@@ -15,9 +16,12 @@ import java.util.HashMap;
 public class AreaLoader {    
     
     public static String chooseArea(){
-        File areasFile = new File("raws/areas/");
+        String path = OrbitAlert.getOrbitAlertPath();
+        File areasFile = new File(path + "/raws/areas");
+        
         ArrayList<String> areaTypes = new ArrayList<>(
                 Arrays.asList(areasFile.list()));
+
         int random = (int) (Math.random() * areaTypes.size());
         return areaTypes.get(random);
     }
@@ -28,13 +32,14 @@ public class AreaLoader {
     
     public static Area loadArea(String areaToLoad){
         try {
-            File areaDirectory = new File("raws/areas/");
+            String path = OrbitAlert.getOrbitAlertPath();
+            File areaDirectory = new File(path + "/raws/areas/");
             String[] areaFiles = areaDirectory.list();
 
             for (String areaFile:areaFiles){
                 if (areaFile.equals(areaToLoad)){
                     //Found the right area folder, open the file.              
-                    File areaText = new File("raws/areas/" + areaFile 
+                    File areaText = new File(path + "/raws/areas/" + areaFile 
                             + "/" + areaFile + ".txt");
                     
                     FileReader fileReader = new FileReader(areaText);

@@ -14,7 +14,7 @@ import orbitalert.Objects.Obj;
  */
 public class AreaTester {
     public void testAreas() {
-       Area newArea = AreaLoader.loadArea("medical");
+       Area newArea = AreaLoader.loadArea();
        GameHelper.output(newArea.getName());
        GameHelper.output(newArea.getDescription());
        

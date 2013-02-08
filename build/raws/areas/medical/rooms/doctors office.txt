@@ -1,0 +1,3 @@
+room
+name/Medical Bay: Doctor's Office
+description/The office is in chaos. The red of the blood is intensified against the white tiled floor and seems to meld into the surface of the dark cherry wood desk. Framed credentials hang limply from the wall other’s are shattered on the floor.

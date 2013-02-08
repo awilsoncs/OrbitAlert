@@ -1,0 +1,3 @@
+room
+name/Bridge: Server Room
+description/Neptune’s brain is contained in the dozens of servers filling up the chilled room in several rows. A subtle hum resonates throughout the room.
