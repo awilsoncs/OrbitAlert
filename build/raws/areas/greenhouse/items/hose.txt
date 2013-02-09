@@ -1,0 +1,4 @@
+item
+name/Hose
+shortDescription/A hose is sprawled on the floor.
+longDescription/Water slowly drips out of the hose’s gapping metal mouth, its yellow body tangled.

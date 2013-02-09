@@ -1,0 +1,4 @@
+item
+name/Used Vials
+shortDescription/Vials line the surface of a table, resting upright in small stands.
+longDescription/The glass vials are filled with is most likely blood. Small labels with various information, written in short hand, are wrapped around them.

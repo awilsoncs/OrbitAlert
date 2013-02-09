@@ -1,0 +1,3 @@
+room
+name/Greenhouse: Refrigeration
+description/The stinging cold has caked a layer of ice along the walls. Metal shelves line up along the room, transparent bags of various vegetables and pots of flowers sit long their surface.

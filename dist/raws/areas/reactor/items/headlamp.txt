@@ -1,0 +1,4 @@
+item
+name/Headlamp
+shortDescription/A head lamp hangs limply from the wall.
+longDescription/The small square lamp dangles from the wall by its multicolored adjustable head strap.

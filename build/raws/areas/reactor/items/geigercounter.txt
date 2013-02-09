@@ -1,0 +1,4 @@
+item
+name/Geiger Counter
+shortDescription/A geiger counter is embedded into one of the walls.
+longDescription/The yellow body of the geiger counter protrudes slightly out of the surface of the wall. The counter’s hand, behind the small glass face, rests off to the left at safe levels.

@@ -1,0 +1,4 @@
+item
+name/Garden Tools
+shortDescription/A small bag of garden tools hangs from a peg in the wall.
+longDescription/A trowel, hand rake, and hand held leaf trimmer rest in the brown trimmed pockets of the beige bag.

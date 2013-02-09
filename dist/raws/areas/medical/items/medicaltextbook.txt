@@ -1,0 +1,4 @@
+item
+name/Medical Textbook
+shortDescription/A book sits at the corner of a chair.
+longDescription/A skeleton with organs is pictured on the book’s glossy blue cover. The title reads: “A Review of Gray’s Anatomy”.

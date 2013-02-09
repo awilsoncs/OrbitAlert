@@ -1,0 +1,4 @@
+item
+name/Scalpel
+shortDescription/A scalpel lies on the floor, a large pool of blood very nearby.
+longDescription/The thick silver handle gradually becomes a thin tiny blade with a dangerously sharp tip and edge. It seems to be able to cut through flesh with very little effort.

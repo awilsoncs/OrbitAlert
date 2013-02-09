@@ -1,0 +1,4 @@
+item
+name/Broken Welder's Mask
+shortDescription/A welder mask lies on its side on the floor.
+longDescription/The tinted square window in the center of the black metal mask is shattered, blood is smeared along the mask’s black surface.

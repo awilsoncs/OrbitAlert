@@ -1,0 +1,4 @@
+item
+name/Hospital Gown
+shortDescription/Hospital gowns hang along pegs on the wall.
+longDescription/The thin blue gown is peppered in little green flower buds. Two strings fasten the shoulders together.
