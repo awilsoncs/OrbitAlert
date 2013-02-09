@@ -13,14 +13,12 @@ public class Area {
     private String areaDescription;
     private String type;
     private int areaDifficulty;
-    private ArrayList<String> roomTypes;
     private ArrayList<Room> areaRooms;
     private ArrayList<Room> areaDamagedRooms;
     private World world;
     //private ArrayList<Mob> areaMobs;
 
     public Area(){
-        roomTypes = new ArrayList<>();
         areaRooms = new ArrayList<>();
         areaDamagedRooms = new ArrayList<>();
     }
@@ -29,7 +27,6 @@ public class Area {
         setName(areaAttributes.get("name"));
         setDescription(areaAttributes.get("description"));
         setType(areaAttributes.get("type"));
-        roomTypes = new ArrayList<>();
         areaRooms = new ArrayList<>();
         areaDamagedRooms = new ArrayList<>();
     }

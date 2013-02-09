@@ -14,30 +14,25 @@ public class World {
     private Map map;
     private ArrayList<Area> areas;
     private ArrayList<Obj> objs;
-    private int orbitDecay;
-
+    
+    
     //Setting attributes
-    private int randomSeed; //Not implemented.
     private Cell mapSize = new Cell(4,4,4);
-    private Cell traversal; //Not implemented.
     private int roomCount = 32;
-    private int[] areaCount;
-    private int[] taskDifficulty;
-    private int[] roamingMonsters;
 
-    public World() {
-
+    public World(ArrayList<Area> areaList, 
+            ArrayList<Obj> objList,
+            Cell startCell,
+            Player player
+            )
+    {
         //Build the world here.
-        map = makeMap(mapSize);
-        areas = new ArrayList<>();
-        objs = new ArrayList<>();
+        map = MapFactory.getMap(mapSize);
+        areas = areaList;
+        objs = objList;
 
         //Pick a starting cell.
         Cell mapDimensions = map.getDimensions();
-        int startX = (int) (Math.random() * mapDimensions.getX());
-        int startY = (int) (Math.random() * mapDimensions.getY());
-        int startZ = (int) (Math.random() * mapDimensions.getZ());
-        Cell startCell = new Cell(startX, startY, startZ);
         
         //create a new MedBay area.
         Area newArea = AreaLoader.loadArea("medical");
@@ -46,10 +41,10 @@ public class World {
         
         //pass in currentCell, currentCell, and the area into this.buildWorld.
         buildWorld(startCell, startCell, newArea);
+        player.setWorld(this);
+        map.getRoom(startCell).add(player);
         
-        Player newPlayer = new Player();
-        newPlayer.setWorld(this);
-        map.getRoom(startCell).add(newPlayer);
+        //This is unneccessary. 
         for (Area area:areas){
             for (Room room: area.getRooms()){
                 for (Obj obj: room.getContents()){
@@ -94,12 +89,6 @@ public class World {
                 buildWorld(nextCell, currentCell, area);
             }
         }
-    }
-
-    //Makers here.
-    private Map makeMap(Cell mapSize) {
-        Map newMap = new Map(mapSize);
-        return newMap;
     }
 
     //Getters here.

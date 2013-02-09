@@ -21,11 +21,8 @@ public class Map  {
      *
      * @param mapSize
      */
-    public Map(Cell mapSize){
-            int x = mapSize.getX();
-            int y = mapSize.getY();
-            int z = mapSize.getZ();
-            mapArray = new Room[x][y][z];
+    public Map(Room[][][] newMapArray){
+            mapArray = newMapArray;
         }
 
     public void addRoom (Cell cell, Room room) {

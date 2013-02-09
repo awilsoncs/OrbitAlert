@@ -4,9 +4,7 @@
  */
 package orbitalert.Areas;
 
-import java.util.ArrayList;
 import orbitalert.GameHelper;
-import orbitalert.Objects.Obj;
 
 /**
  *

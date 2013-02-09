@@ -18,7 +18,7 @@ public class OrbitAlert {
     public static void main(String[] args) {
         for (String arg : args) {
             if(arg.equals("play")){
-                World newWorld = new World();
+                World newWorld = WorldFactory.getWorld();
                 GameHelper.startGame(newWorld);
             }
             if(arg.equals("worldtest")){
@@ -45,7 +45,7 @@ public class OrbitAlert {
     }
     
     private void itemTest() {
-        World newWorld = new World();
+        World newWorld = WorldFactory.getWorld();
         for (Obj obj : newWorld.getObjs()){
             GameHelper.output(obj.getName());
         }
@@ -53,7 +53,7 @@ public class OrbitAlert {
     
     private void worldTest() {
         GameHelper.output("Start worldTest");
-        World newWorld = new World();
+        World newWorld = WorldFactory.getWorld();
         Map worldMap = newWorld.getMap();
         Cell dimensions = worldMap.getDimensions();
         int maxX = dimensions.getX();
