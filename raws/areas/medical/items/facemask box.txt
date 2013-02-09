@@ -1,0 +1,4 @@
+item
+name/Facemask Box
+shortDescription/A box of unopened facemask sit at the edge of a shelf table along the wall.
+longDescription/The thin blue masks from the box cover the nose and mouth. It’s used primarily by doctors, nurses, and people that don’t know how to cover their mouth.

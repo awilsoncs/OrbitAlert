@@ -53,6 +53,7 @@ public class AreaLoader {
                             areaAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
                         }
                     }
+                    reader.close();
                     Area newArea = new Area(areaAttributes);    
                     return newArea;
                 }

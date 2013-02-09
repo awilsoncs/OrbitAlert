@@ -1,0 +1,4 @@
+item
+name/Handgun
+shortDescription/A hand gun sits in its leather holster on the surface of a desk.
+longDescription/Embedded into the sleek blue steal of the barrel, just in front of the trigger, is a stout rectangular ammo clip feeding into the chamber. Its black grip curves slightly with the shape of one’s palm. If the large barrel is any indication the handgun has some stopping power.

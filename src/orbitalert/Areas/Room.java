@@ -44,7 +44,7 @@ public class Room implements Container {
         
         //Generate Items
         
-        int numberOfItems = (int) ((Math.random() * 3) * Math.random() * 2);
+        int numberOfItems = (int) ((Math.random() * 3) + Math.random() * 2);
         for (;numberOfItems > 0; numberOfItems--){
             Item newItem = ItemLoader.loadItem(getParentAreaType());
             add(newItem);

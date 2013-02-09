@@ -51,7 +51,8 @@ public abstract class RoomLoader {
                             keyValuePair.get(0), keyValuePair.get(1));
                 }
             }
-            Room newRoom = new Room(roomAttributes, areaType);    
+            Room newRoom = new Room(roomAttributes, areaType);
+            reader.close();
             return newRoom;
         } catch (Exception ex) {
             ex.printStackTrace();

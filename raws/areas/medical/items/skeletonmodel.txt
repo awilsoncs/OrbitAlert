@@ -1,0 +1,4 @@
+item
+name/Skeleton Model
+shortDescription/A skeleton stands lifeless in the corner.
+longDescription/The Plastic bones of the skeleton, propped up by a pole going to the base of its skull, are held together by thin wires and string.

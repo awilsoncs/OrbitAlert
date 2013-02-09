@@ -36,17 +36,18 @@ public class ItemLoader {
     public static Item loadItem(File itemFile){
         try{
             FileReader fileReader = new FileReader(itemFile);
-        BufferedReader reader = new BufferedReader(fileReader);
+            BufferedReader reader = new BufferedReader(fileReader);
 
-        String line;
-        HashMap<String, String> itemAttributes = new HashMap<>();
-        while (( line = reader.readLine()) != null){
-            ArrayList<String> keyValuePair = new ArrayList<>(Arrays.asList(line.split("/")));
-            if (keyValuePair.size() > 1){
-                itemAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
+            String line;
+            HashMap<String, String> itemAttributes = new HashMap<>();
+            while (( line = reader.readLine()) != null){
+                ArrayList<String> keyValuePair = new ArrayList<>(Arrays.asList(line.split("/")));
+                if (keyValuePair.size() > 1){
+                    itemAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
+                }
             }
-        }
-        return new Item(itemAttributes);
+            reader.close();
+            return new Item(itemAttributes);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
