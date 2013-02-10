@@ -5,6 +5,7 @@
 package orbitalert.Objects.Mobs;
 
 import orbitalert.Areas.Room;
+import orbitalert.Cell;
 import orbitalert.GameHelper;
 
 /**
@@ -22,7 +23,9 @@ public class Player extends Mob {
     @Override
     public void behavior(){
         Room location = (Room) getLoc();
+        Cell locCell = getWorld().getMap().getCell(location);
         GameHelper.output(location.getSummary());
+        GameHelper.output(locCell.getSummary());
         GameHelper.output("\nWhat do you do?");
         String action = GameHelper.input();
         switch (action){

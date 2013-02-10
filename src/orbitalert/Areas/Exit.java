@@ -20,11 +20,11 @@ public class Exit {
         solutionTask = newTask;
     }
 
-    public boolean getIsOpen() {
+    public boolean isOpen() {
         if (solutionTask == null) {
             return true;
         } else {
-            return solutionTask.getIsSolved();
+            return solutionTask.isSolved();
         }
     }
     

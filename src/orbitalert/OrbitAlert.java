@@ -18,7 +18,8 @@ public class OrbitAlert {
     public static void main(String[] args) {
         for (String arg : args) {
             if(arg.equals("play")){
-                World newWorld = WorldFactory.getWorld();
+                World newWorld = WorldFactory.getWorld(
+                    new Cell(4,4,4), 32);
                 GameHelper.startGame(newWorld);
             }
             if(arg.equals("worldtest")){
@@ -45,7 +46,8 @@ public class OrbitAlert {
     }
     
     private void itemTest() {
-        World newWorld = WorldFactory.getWorld();
+        World newWorld = WorldFactory.getWorld(
+                new Cell(4,4,4), 32);
         for (Obj obj : newWorld.getObjs()){
             GameHelper.output(obj.getName());
         }
@@ -53,7 +55,8 @@ public class OrbitAlert {
     
     private void worldTest() {
         GameHelper.output("Start worldTest");
-        World newWorld = WorldFactory.getWorld();
+        World newWorld = WorldFactory.getWorld(
+                new Cell(4,4,4), 32);
         Map worldMap = newWorld.getMap();
         Cell dimensions = worldMap.getDimensions();
         int maxX = dimensions.getX();
@@ -62,18 +65,18 @@ public class OrbitAlert {
         for (int i = 0; i <= maxX; i++){
             for(int j = 0; j <= maxY; j++){
                 for (int k = 0; k <= maxZ; k++){
+
+                    Cell checkCell = new Cell(i,j,k);
+                    Room checkRoom = worldMap.getRoom(checkCell);
                     String loc = "Cell: ";
                     loc += Integer.toString(i) + ", ";
                     loc += Integer.toString(j) + ", ";
-                    loc += Integer.toString(k);
-                    GameHelper.output(loc);
-                    Cell checkCell = new Cell(i,j,k);
-                    Room checkRoom = worldMap.getRoom(checkCell);
+                    loc += Integer.toString(k) + ": ";
                     if (checkRoom != null){
-                        String output = checkRoom.getSummary();
-                        GameHelper.output(output);
+                        GameHelper.output(loc + checkRoom.getName());
+                        
                     } else {
-                        GameHelper.output("Null Cell");
+                        GameHelper.output(loc + "Null Cell");
                     }
                 }
             }

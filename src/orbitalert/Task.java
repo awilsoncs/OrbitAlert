@@ -5,12 +5,17 @@ package orbitalert;
  * @author Aaron
  */
 public abstract class Task {
-    private boolean isSolved;
+    private boolean solved;
     private int difficulty;
 
-    public boolean getIsSolved(){
-        return this.isSolved;
+    public boolean isSolved() {
+        return solved;
     }
+
+    public void setSolved(boolean solved) {
+        this.solved = solved;
+    }
+
     private int getDifficulty(){
         return this.difficulty;
     }

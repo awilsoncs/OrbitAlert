@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import orbitalert.Areas.Exit;
 import orbitalert.Areas.Room;
 import orbitalert.Cell;
+import orbitalert.GameHelper;
 import orbitalert.Map;
 import orbitalert.Objects.Container;
 import orbitalert.Objects.Items.Item;
@@ -98,9 +99,13 @@ public abstract class Mob extends Obj implements Container {
     private boolean canStep(String direction){
         Room locRoom = (Room) getLoc();
         Exit roomExit = locRoom.getExit(direction);
-        if (roomExit.getIsOpen()){
+        if (roomExit != null && roomExit.isOpen()){
             return true;
+        } else if (roomExit != null && roomExit.isOpen() == false){
+            GameHelper.output("That exit is locked.");
+            return false;
         }
+        GameHelper.output("You cannot go that way.");
         return false;
     };
     
@@ -132,6 +137,7 @@ public abstract class Mob extends Obj implements Container {
         if(newRoom != null){
             return newRoom;
         } else {
+            GameHelper.output("Null room");
             return null;
         }
     };
