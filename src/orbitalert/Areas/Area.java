@@ -79,9 +79,9 @@ public class Area {
    // }
     
     public Room makeRoom(){
-        Room newRoom = RoomLoader.loadRoom(type);
+        RoomFactory roomFactory = new RoomFactory();
+        Room newRoom = roomFactory.getRoom(type);
         addRoom(newRoom);
-        newRoom.setWorld(world);
         return newRoom;
     };
 }

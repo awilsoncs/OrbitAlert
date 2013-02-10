@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import orbitalert.Objects.Obj;
 import orbitalert.OrbitAlert;
 
 /**
@@ -17,15 +18,18 @@ public abstract class RoomLoader {
         return loadRoom(areaType, chooseRoomFile(areaType));
     };
     
-    private static String chooseRoomFile(String areaType){        
+    public static String chooseRoomFile(String areaType){        
         try {
             String path = OrbitAlert.getOrbitAlertPath();
             File areaRoomsFile = new File(path + "/raws/areas/" + areaType + "/rooms/");
             ArrayList<String> roomTypes = new ArrayList<>(
                 Arrays.asList(areaRoomsFile.list()));
-            //Choose weighted random room file here.
             int random = (int) (Math.random() * roomTypes.size());
-            return roomTypes.get(random);
+            
+            
+            String roomType = roomTypes.get(random);
+            roomType = roomType.substring(0,roomType.lastIndexOf(".txt"));
+            return roomType;
         } catch (Exception ex) {
             ex.printStackTrace();            
         }
@@ -36,7 +40,7 @@ public abstract class RoomLoader {
         try {
             String path = OrbitAlert.getOrbitAlertPath();
             File roomFile = new File(path + "/raws/areas/" + areaType 
-                    + "/rooms/" + roomText);
+                    + "/rooms/" + roomText + ".txt");
                     
             FileReader fileReader = new FileReader(roomFile);
             BufferedReader reader = new BufferedReader(fileReader);
@@ -51,7 +55,12 @@ public abstract class RoomLoader {
                             keyValuePair.get(0), keyValuePair.get(1));
                 }
             }
-            Room newRoom = new Room(roomAttributes, areaType);
+            
+            HashMap<String, Exit> newExitMap = new HashMap<>();
+            ArrayList<Obj> newObjList = new ArrayList<>();
+            
+            Room newRoom = new Room(roomAttributes,
+                    areaType, newObjList, newExitMap);
             reader.close();
             return newRoom;
         } catch (Exception ex) {

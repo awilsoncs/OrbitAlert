@@ -7,11 +7,8 @@ package orbitalert.Areas;
 import java.util.ArrayList;
 import java.util.HashMap;
 import orbitalert.Objects.Container;
-import orbitalert.Objects.Items.Item;
-import orbitalert.Objects.Items.ItemLoader;
 import orbitalert.Objects.Obj;
 import orbitalert.Task;
-import orbitalert.World;
 
 /**
  *
@@ -24,32 +21,19 @@ public class Room implements Container {
     private String roomDescription;
     private ArrayList<Obj> contents;
     private HashMap<String, Exit> exitMap;
-    private World world;
     //HashMap exit list
 
-    public World getWorld() {
-        return world;
-    }
-
-    public void setWorld(World world) {
-        this.world = world;
-    }
-
-    public Room(HashMap<String, String> roomAttributes, String parentArea) {
+    public Room(
+            HashMap<String, String> roomAttributes,
+            String parentArea,
+            ArrayList<Obj> newContents,
+            HashMap<String, Exit> newExitMap
+            ) {
         setName(roomAttributes.get("name"));
         setDescription(roomAttributes.get("description"));
         setParentAreaType(parentArea);
-        exitMap = new HashMap<>();
-        contents = new ArrayList<>();
-        
-        //Generate Items
-        
-        int numberOfItems = (int) ((Math.random() * 3) + Math.random() * 2);
-        for (;numberOfItems > 0; numberOfItems--){
-            Item newItem = ItemLoader.loadItem(getParentAreaType());
-            add(newItem);
-            newItem.setWorld(world);
-        }
+        exitMap = newExitMap;
+        contents = newContents;
     }
 
     public void setParentAreaType(String type){
