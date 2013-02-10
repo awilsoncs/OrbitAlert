@@ -11,7 +11,6 @@ import orbitalert.Objects.Obj;
  * @author Aaron
  */
 public class OrbitAlert {
-
     /**
      * @param args the command line arguments
      */
@@ -19,7 +18,7 @@ public class OrbitAlert {
         for (String arg : args) {
             if(arg.equals("play")){
                 World newWorld = WorldFactory.getWorld(
-                    new Cell(4,4,4), 32);
+                    new Cell(4,4,4));
                 GameHelper.startGame(newWorld);
             }
             if(arg.equals("worldtest")){
@@ -47,7 +46,7 @@ public class OrbitAlert {
     
     private void itemTest() {
         World newWorld = WorldFactory.getWorld(
-                new Cell(4,4,4), 32);
+                new Cell(4,4,4));
         for (Obj obj : newWorld.getObjs()){
             GameHelper.output(obj.getName());
         }
@@ -56,7 +55,7 @@ public class OrbitAlert {
     private void worldTest() {
         GameHelper.output("Start worldTest");
         World newWorld = WorldFactory.getWorld(
-                new Cell(4,4,4), 32);
+                new Cell(4,4,4));
         Map worldMap = newWorld.getMap();
         Cell dimensions = worldMap.getDimensions();
         int maxX = dimensions.getX();

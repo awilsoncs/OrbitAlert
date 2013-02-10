@@ -14,10 +14,7 @@ import orbitalert.Objects.Obj;
  * @author Aaron
  */
 public class WorldFactory {
-    public static World getWorld(
-            Cell mapSize,
-            int roomCount
-            ){
+    public static World getWorld(Cell mapSize){
         
         int startX = (int) (Math.random() * mapSize.getX());
         int startY = (int) (Math.random() * mapSize.getY());
@@ -27,9 +24,7 @@ public class WorldFactory {
         //Build the map
         MapFactory mapFactory = new MapFactory();
         Map map = mapFactory.getMap(mapSize,
-                startCell,
-                roomCount
-                );
+                startCell);
         
         //Build the player mob.
         Player player = new Player();

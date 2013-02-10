@@ -14,8 +14,9 @@ import orbitalert.Areas.Room;
  * @author Aaron
  */
 public class MapFactory {
-    int MINIMUM_ROOMS = 4;
-    int NEW_AREA_CHANCE = 25;
+    static int MINIMUM_ROOMS_TOTAL = 32;
+    static int MINIMUM_ROOMS_PER_AREA = 4;
+    static int NEW_AREA_CHANCE = 25;
     
     /**
      *
@@ -26,8 +27,7 @@ public class MapFactory {
      */
     public Map getMap(
             Cell mapSize,
-            Cell startCell,
-            int roomCount){
+            Cell startCell){
         
         int x = mapSize.getX();
         int y = mapSize.getY();
@@ -40,7 +40,11 @@ public class MapFactory {
         Area newArea = AreaLoader.loadArea("medical");
         
         //Start a recursive build on newMap.
-        newMap = buildMap(newMap, startCell, startCell, newArea, roomCount);
+        newMap = buildMap(newMap,
+                startCell,
+                startCell,
+                newArea,
+                MINIMUM_ROOMS_TOTAL);
         
         return newMap;
     }
@@ -57,7 +61,8 @@ public class MapFactory {
         
         //Random check to see if a new Area should be started.
         int roll = (int) (Math.random() * 100);
-        if (area.getRooms().size() >= MINIMUM_ROOMS && roll <= NEW_AREA_CHANCE) {
+        if (area.getRooms().size() >= MINIMUM_ROOMS_PER_AREA
+                && roll <= NEW_AREA_CHANCE) {
             //Start a new area.
             Area oldArea = area;
             area = AreaLoader.loadArea();
