@@ -18,23 +18,27 @@ import orbitalert.OrbitAlert;
  */
 public class ItemLoader {
 
-    private static File chooseItemFile(String areaType){
+    public static String chooseItemFile(String areaType){
         String path = OrbitAlert.getOrbitAlertPath();
         File itemsFile = new File(path + "/raws/areas/" + areaType + "/items/");
         ArrayList<String> itemTypes = new ArrayList<>(
                 Arrays.asList(itemsFile.list()));
         int random = (int) (Math.random() * itemTypes.size());
-        File itemFile = new File(path + "/raws/areas/" + areaType 
-                + "/items/" + itemTypes.get(random));
-        return itemFile;
+        String itemType = itemTypes.get(random);
+        itemType = itemType.substring(0,itemType.lastIndexOf(".txt"));
+        return itemType;
     }
     
     public static Item loadItem(String areaType) {
-        return loadItem(chooseItemFile(areaType));
+        return loadItem(areaType, chooseItemFile(areaType));
     }
     
-    public static Item loadItem(File itemFile){
+    public static Item loadItem(String areaType, String itemType){
         try{
+            String path = OrbitAlert.getOrbitAlertPath();
+            File itemFile = new File(path + "/raws/areas/" + areaType 
+                    + "/items/" + itemType + ".txt");
+            
             FileReader fileReader = new FileReader(itemFile);
             BufferedReader reader = new BufferedReader(fileReader);
 

@@ -9,7 +9,6 @@ import orbitalert.Map;
 import orbitalert.Objects.Container;
 import orbitalert.Objects.Items.Item;
 import orbitalert.Objects.Obj;
-import orbitalert.Objects.Useable;
 import orbitalert.World;
 
 /**
@@ -146,7 +145,7 @@ public abstract class Mob extends Obj implements Container {
     
     //Obj interaction
     private boolean get(Item item){
-        if (item.getCanMove()){
+        if (item.isMoveable()){
             item.move(this);
             return true;
         } else {
@@ -161,7 +160,7 @@ public abstract class Mob extends Obj implements Container {
         return result;
     };
     
-    private boolean use(Useable item){
+    private boolean use(Item item){
         return false;
     };
 
