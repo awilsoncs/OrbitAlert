@@ -55,7 +55,7 @@ public class WorldFactory {
                 32,
                 player
                 );
-        
+        player.setWorld(world);
         return world;
     }
 }

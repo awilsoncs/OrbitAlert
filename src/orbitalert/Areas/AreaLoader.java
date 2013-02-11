@@ -30,6 +30,11 @@ public class AreaLoader {
         return loadArea(chooseArea());
     }
     
+    /**
+     *
+     * @param areaToLoad
+     * @return
+     */
     public static Area loadArea(String areaToLoad){
         try {
             String path = OrbitAlert.getOrbitAlertPath();
@@ -43,23 +48,22 @@ public class AreaLoader {
                             + "/" + areaFile + ".txt");
                     
                     FileReader fileReader = new FileReader(areaText);
-                    BufferedReader reader = new BufferedReader(fileReader);
-
-                    String line;
-                    HashMap<String, String> areaAttributes = new HashMap<>();
-                    while (( line = reader.readLine()) != null){
-                        ArrayList<String> keyValuePair = new ArrayList<>(Arrays.asList(line.split("/")));
-                        if (keyValuePair.size() > 1){
-                            areaAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
+                    HashMap<String, String> areaAttributes;
+                    try (BufferedReader reader = new BufferedReader(fileReader)) {
+                        String line;
+                        areaAttributes = new HashMap<>();
+                        while (( line = reader.readLine()) != null){
+                            ArrayList<String> keyValuePair = new ArrayList<>(Arrays.asList(line.split("/")));
+                            if (keyValuePair.size() > 1){
+                                areaAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
+                            }
                         }
                     }
-                    reader.close();
                     Area newArea = new Area(areaAttributes);    
                     return newArea;
                 }
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
         }
         return null;
     }

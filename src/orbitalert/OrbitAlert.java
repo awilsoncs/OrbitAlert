@@ -119,7 +119,6 @@ public class OrbitAlert {
         try {
             decodedPath = URLDecoder.decode(path, "UTF-8");
         } catch (UnsupportedEncodingException ex) {
-            ex.printStackTrace();
         }
                 
         File areasFile = new File(decodedPath);

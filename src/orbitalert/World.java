@@ -23,8 +23,6 @@ public class World {
     {
         map = newMap;
         objs = objList;
-        
-        player.setWorld(this);
     }
 
     //Getters here.
