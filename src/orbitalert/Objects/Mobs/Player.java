@@ -42,6 +42,16 @@ public class Player extends Mob {
                         info(parsedAction[1]);
                     }
                     break;
+                case "get":
+                    if (parsedAction.length > 1){
+                        get(parsedAction[1]);
+                    }
+                    break;
+                case "drop":
+                    if (parsedAction.length > 1){
+                        drop(parsedAction[1]);
+                    }
+                    break;
                 case "walk":
                     if (parsedAction.length > 1){
                         walk(parsedAction[1]);

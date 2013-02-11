@@ -1,4 +1,0 @@
-item
-name/Doctor's Facemask
-shortDescription/A facemask is discarded on the floor.
-longDescription/The thin blue mask is just big enough to cup over the mouth and nose.

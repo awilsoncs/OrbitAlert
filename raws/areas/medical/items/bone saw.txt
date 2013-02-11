@@ -1,4 +1,0 @@
-item
-name/Bonesaw
-shortDescription/A bone saw, wrapped in plastic, sits on a small cart.
-longDescription/The handle of the bone saw is similar to a hollowed out gun grip. The blade is tall with strong sharp teeth and a rounded tip. It can easily cut through flesh and bone.

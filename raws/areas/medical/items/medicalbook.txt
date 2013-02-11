@@ -1,4 +1,0 @@
-item
-name/Medical Book
-shortDescription/A book sits on the surface of a table.
-longDescription/The thick book is bound in burgundy and its title trimmed in gold. The gold letters read: “See an Organ? Poke It: A Surgeon’s Guide to Exploratory Surgery.”

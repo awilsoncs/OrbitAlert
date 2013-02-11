@@ -143,9 +143,13 @@ public abstract class Mob extends Obj implements Container {
     //private String getDirectionTo(Obj object){
     //    This is going to need to use A* pathfinding.
     
-    //Obj interaction
-    private boolean get(Item item){
-        if (item.isMoveable()){
+    /**
+     *
+     * @param item
+     * @return
+     */
+    public boolean get(Item item){
+        if (item.isGetable()){
             item.move(this);
             return true;
         } else {
@@ -153,12 +157,68 @@ public abstract class Mob extends Obj implements Container {
         }
     }
     
-    private boolean drop(Item item){
+    /**
+     *
+     * @param itemName
+     * @return
+     */
+    public boolean get(String itemName){
+        Container loc = getLoc();
+        ArrayList<Obj> objList = loc.getContents();
+        for(Obj obj:objList){
+            //Normalize capitalization.
+            String objName = obj.getName().toLowerCase();
+            itemName = itemName.toLowerCase();
+            
+            //Skip over items that aren't getable
+            //then check by name and hashcode.
+            if(obj.isGetable() && 
+                    (objName.equals(itemName) ||
+                    String.valueOf(obj.hashCode()).equals(itemName))){
+                
+                //Make sure it's an Item, then cast and get it.
+                if(obj.getClass() == Item.class){
+                    Item item = (Item) obj;
+                    return get(item);
+                }
+            }
+        }
+        return false;
+    }
+    
+    /**
+     *
+     * @param item
+     * @return
+     */
+    public boolean drop(Item item){
         //Moves the item into the Mob's loc.
         Container newLoc = getLoc();
         boolean result = item.move(newLoc);
         return result;
     };
+    
+    /**
+     *
+     * @param itemName
+     * @return
+     */
+    public boolean drop(String itemName){
+        for (Obj obj:getContents()){
+            String objName = obj.getName().toLowerCase();
+            itemName = itemName.toLowerCase();
+            
+            if(objName.equals(itemName) ||
+                    String.valueOf(obj.hashCode()).equals(itemName)){
+                if(obj.getClass() == Item.class){
+                    Item item = (Item) obj;
+                    System.out.println("Dropping the item");
+                    return drop(item);
+                }
+            }
+        }
+        return false;
+    }
     
     private boolean use(Item item){
         return false;
@@ -194,6 +254,11 @@ public abstract class Mob extends Obj implements Container {
      */
     @Override
     public boolean add(Obj obj){
+        
+        //Make sure we have an inventory before adding to it.
+        if(getContents() == null){
+            contents = new ArrayList<>();
+        }
         contents.add(obj);
         return true;
     };

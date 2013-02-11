@@ -1,4 +1,0 @@
-item
-name/Medicine Dispenser
-shortDescription/A Medicine Dispenser is pushed up into a corner.
-longDescription/Trays of medicine sit on a tall set of shelves behind a glass door. A stout console with a number pad is connected to it.

@@ -1,4 +1,0 @@
-item
-name/Bedpan
-shortDescription/There is a bedpan here.
-longDescription/The putrid smell emanating from inside the bedpan discourages a closer examination.
