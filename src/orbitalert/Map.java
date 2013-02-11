@@ -1,5 +1,7 @@
 package orbitalert;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import orbitalert.Areas.Room;
 
 /**
@@ -7,30 +9,28 @@ import orbitalert.Areas.Room;
  * @author Aaron
  */
 public class Map  {
-        private Room[][][] mapArray;
+        private Cell dimensions;
+        private HashMap<Cell, Room> roomMap;
+        private HashMap<Room, Cell> cellMap;
 
         public Cell getDimensions(){
-            int maxX = mapArray.length - 1;
-            int maxY = mapArray[0].length - 1;
-            int maxZ = mapArray[0][0].length - 1;
-            Cell dimensions = new Cell(maxX, maxY, maxZ);
-            return dimensions;
+            return this.dimensions;
         }
 
      /**
      *
      * @param mapSize
      */
-    public Map(Room[][][] newMapArray){
-            mapArray = newMapArray;
+    public Map(Cell dimensions){
+            this.dimensions = dimensions;
+            roomMap = new HashMap<>();
+            cellMap = new HashMap<>();
         }
 
     public void addRoom (Cell cell, Room room) {
-        if (getRoom(cell) == null) {
-            int x = cell.getX();
-            int y = cell.getY();
-            int z = cell.getZ();
-            mapArray[x][y][z] = room;
+        if (getRoom(cell) == null) {            
+            roomMap.put(cell, room);            
+            cellMap.put(room, cell);
         } else {
             GameHelper.output(
                     "Error: Attempting to write room in non-null cell.");
@@ -158,28 +158,12 @@ public class Map  {
         }
 
         public Room getRoom(Cell cell){
-            int x = cell.getX();
-            int y = cell.getY();
-            int z = cell.getZ();
-            if (mapArray[x][y][z] != null) {
-                Room room = this.mapArray[x][y][z];
-                return room;
-            }
-                return null;
+            Room room = roomMap.get(cell);
+            return room;
         }
         
         public Cell getCell(Room room){
-            Cell dimensions = getDimensions();
-            for(int x = 0; x <= dimensions.getX(); x++){
-                for(int y = 0; y <= dimensions.getY(); y++){
-                    for(int z = 0; z <= dimensions.getZ(); z++){
-                        if(mapArray[x][y][z] == room){
-                            Cell newCell = new Cell(x,y,z);
-                            return new Cell(x,y,z);
-                        }
-                    }
-                }
-            }
-            return null;
+            Cell cell = cellMap.get(room);
+            return cell;
         }
     }

@@ -37,7 +37,11 @@ public class WorldFactory {
                 for(int z = 0; z < mapSize.getZ(); z++){
                     Room checkRoom = map.getRoom(new Cell(x,y,z));
                     if (checkRoom != null){
-                        objList.addAll(checkRoom.getContents());
+                        for(Obj obj:checkRoom.getContents()){
+                            if (obj.isActive()){
+                                objList.add(obj);
+                            }
+                        }
                     }
                 }
             }

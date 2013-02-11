@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package orbitalert;
 
 import java.util.ArrayList;
@@ -14,9 +10,11 @@ import orbitalert.Areas.Room;
  * @author Aaron
  */
 public class MapFactory {
-    static int MINIMUM_ROOMS_TOTAL = 32;
+    static int MAXIMUM_ROOMS_TOTAL = 80;
     static int MINIMUM_ROOMS_PER_AREA = 4;
     static int NEW_AREA_CHANCE = 25;
+    static int PATH_DEPTH_ROOMS = 8;
+    static int TRAVERSAL_CHANCE = 70;
     
     /**
      *
@@ -29,12 +27,8 @@ public class MapFactory {
             Cell mapSize,
             Cell startCell){
         
-        int x = mapSize.getX();
-        int y = mapSize.getY();
-        int z = mapSize.getZ();
-        
         //Build a blank map.
-        Map newMap = new Map(new Room[x][y][z]);
+        Map newMap = new Map(mapSize);
 
         //Load and create a new MedBay area.
         Area newArea = AreaLoader.loadArea("medical");
@@ -44,7 +38,7 @@ public class MapFactory {
                 startCell,
                 startCell,
                 newArea,
-                MINIMUM_ROOMS_TOTAL);
+                PATH_DEPTH_ROOMS);
         
         return newMap;
     }
@@ -54,13 +48,15 @@ public class MapFactory {
             Cell currentCell,
             Cell previousCell,
             Area area,
-            int roomCount
+            int depthCount
             ){
         
         Room newRoom;
         
         //Random check to see if a new Area should be started.
         int roll = (int) (Math.random() * 100);
+        System.out.println("Total: " + String.valueOf(MAXIMUM_ROOMS_TOTAL));
+        System.out.println("Path Depth: " + String.valueOf(depthCount));
         if (area.getRooms().size() >= MINIMUM_ROOMS_PER_AREA
                 && roll <= NEW_AREA_CHANCE) {
             //Start a new area.
@@ -86,15 +82,21 @@ public class MapFactory {
         //The current cell is build, so we recurse on its neighbors
         //in a random order.
         ArrayList<Cell> neighbors = map.getNeighbors(currentCell);
-        while (neighbors.size() > 0 && roomCount > 0) {
+        while (neighbors.size() > 0 
+                && MAXIMUM_ROOMS_TOTAL > 0 
+                && depthCount > 0) {
+            
             //Pop a random neighbor.
             int popIndex = (int) (Math.random() * neighbors.size());
             Cell nextCell = neighbors.get(popIndex);
             neighbors.remove(nextCell);
-
-            if (map.getRoom(nextCell) == null) {
-                roomCount--;
-                buildMap(map, nextCell, currentCell, area, roomCount);
+            
+            int random = (int) (Math.random() * 100);
+            if (random <= TRAVERSAL_CHANCE
+                    && map.getRoom(nextCell) == null) {
+                MAXIMUM_ROOMS_TOTAL--;
+                depthCount--;
+                buildMap(map, nextCell, currentCell, area, depthCount);
             }
         }
         

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import orbitalert.Areas.Room;
+import orbitalert.Areas.RoomFactory;
 import orbitalert.Objects.Obj;
 
 /**
@@ -36,7 +37,29 @@ public class OrbitAlert {
             if(arg.equals("gamehelpertest")){
                 gameHelperTest();
             }
+            if(arg.equals("maptest")){
+                mapTest();
+            }
         }        
+    }
+    private static void mapTest() {
+        Cell cell1 = new Cell(1,1,1);
+        Cell cell2 = new Cell(1,1,1);
+        GameHelper.output(String.valueOf(cell1.hashCode()));
+        GameHelper.output(String.valueOf(cell2.hashCode()));
+        GameHelper.output(String.valueOf(cell1.equals(cell2)));
+        
+        Map map = new Map(new Cell(1,1,1));
+        
+        RoomFactory roomFactory = new RoomFactory();
+        Room room1 = roomFactory.getRoom("medical", "surgery");
+        Room room2 = roomFactory.getRoom("medical", "hallway1");
+        
+        map.addRoom(cell1, room1);
+        GameHelper.output(map.getRoom(cell1).getName());
+        map.addRoom(cell2, room2);
+        GameHelper.output(map.getRoom(cell1).getName());
+        GameHelper.output(map.getRoom(cell2).getName());
     }
     
     private void areaTest() {

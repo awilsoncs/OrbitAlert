@@ -16,6 +16,7 @@ public class Player extends Mob {
     
     public Player(){
         setName("Player");
+        setActive(true);
     }
     /**
      *
@@ -25,7 +26,7 @@ public class Player extends Mob {
         Room location = (Room) getLoc();
         Cell locCell = getWorld().getMap().getCell(location);
         GameHelper.output(location.getSummary());
-        GameHelper.output(locCell.getSummary());
+        GameHelper.output(locCell.toString());
         GameHelper.output("\nWhat do you do?");
         String action = GameHelper.input();
         switch (action){
