@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/A suffocating cold has descended on the corridor. Any moisture in the air has turned into beaded crystals along the rounded passage wall’s.

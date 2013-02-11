@@ -1,0 +1,3 @@
+room
+name/Berthing: Crew Quarters
+description/Fifty or so beds line each wall in the large room, incased in cubicles. Each cubicle has space to move around comfortably and a dresser protruding out of a cubicle wall. Emergency lights tint the darkness with a menacing red glow.

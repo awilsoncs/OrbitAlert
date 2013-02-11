@@ -1,0 +1,5 @@
+name/Duffel Bag
+container/true
+holds/mug, hose
+short/A Duffel bag rests on the floor.
+long/A navy blue Duffel bag lies open on the floor, a white sock peeking out of the zipper.

@@ -3,8 +3,11 @@ package orbitalert;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import orbitalert.Areas.Room;
 import orbitalert.Areas.RoomFactory;
+import orbitalert.Objects.Items.Item;
+import orbitalert.Objects.Items.ItemFactory;
 import orbitalert.Objects.Obj;
 
 /**
@@ -40,6 +43,9 @@ public class OrbitAlert {
             if(arg.equals("maptest")){
                 mapTest();
             }
+            if(arg.equals("containeritemtest")){
+                containerItemTest();
+            }
         }        
     }
     private static void mapTest() {
@@ -72,6 +78,15 @@ public class OrbitAlert {
                 new Cell(4,4,4));
         for (Obj obj : newWorld.getObjs()){
             GameHelper.output(obj.getName());
+        }
+    }
+    
+    private static void containerItemTest(){
+        ItemFactory itemFactory = new ItemFactory();
+        Item item = itemFactory.getItem("medical", "dufflebag");
+        ArrayList<Obj> contents = item.getContents();
+        for(Obj obj:contents){
+            System.out.println(obj.getName());
         }
     }
     

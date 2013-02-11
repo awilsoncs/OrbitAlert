@@ -1,0 +1,4 @@
+item
+name/Tidy Hose
+shortDescription/A hose rests on the floor.
+longDescription/The yellow body of the rubber hose is tightly rolled.

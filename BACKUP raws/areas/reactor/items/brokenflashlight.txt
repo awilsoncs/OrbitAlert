@@ -1,0 +1,4 @@
+item
+name/Flashlight
+shortDescription/There’s a flashlight laying on its side in the corner.
+longDescription/The large, square, grey body the flashlight is surrounded by the remains of its glace face and shattered bulb.

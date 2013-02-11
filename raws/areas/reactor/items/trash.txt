@@ -1,0 +1,3 @@
+name/Trash
+short/Trash litters the floor.
+long/Empty silver wrappers, crumpled papers, and discarded paper cups are sprawled out along the floor.

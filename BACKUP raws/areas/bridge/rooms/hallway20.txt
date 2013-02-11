@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/The light fixtures hum subtly as they struggle to illuminate the deserted white paneled corridor.

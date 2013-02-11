@@ -1,0 +1,3 @@
+room
+name/Science Ward: Wet Lab
+description/Large ventilation fans droop down from the ceiling, the whipping of the blades cutting through the air and vibrating the walls. Massive tanks line the room, Heavy hatches capping the bulky cylinders. Barrels of chemicals are pressed up against the far wall.

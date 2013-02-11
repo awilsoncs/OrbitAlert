@@ -1,19 +1,26 @@
 package orbitalert.Objects;
 
+import java.util.ArrayList;
+import orbitalert.Objects.Items.Item;
 import orbitalert.World;
 
 /**
  *
  * @author Aaron
  */
-public abstract class Obj{
+public abstract class Obj implements Container
+
+{
     Container loc;
+    ArrayList<Obj> contents;
+    ArrayList<String> holdTypes;
     boolean getable = false;
     boolean wieldable = false;
     boolean wearable = false;
     boolean active = false;
     boolean moveable = false;
     boolean useable = false;
+    boolean container = false;
     String name;
     String shortDescription;
     String longDescription;
@@ -25,6 +32,18 @@ public abstract class Obj{
 
     public void setLoc(Container loc) {
         this.loc = loc;
+    }
+
+    public void setContents(ArrayList<Obj> contents) {
+        this.contents = contents;
+    }
+
+    public ArrayList<String> getHoldTypes() {
+        return holdTypes;
+    }
+
+    public void setHoldTypes(ArrayList<String> holdTypes) {
+        this.holdTypes = holdTypes;
     }
 
     public boolean isGetable() {
@@ -74,6 +93,14 @@ public abstract class Obj{
 
     public void setUseable(boolean useable) {
         this.useable = useable;
+    }
+
+    public boolean isContainer() {
+        return container;
+    }
+
+    public void setContainer(boolean container) {
+        this.container = container;
     }
 
     public String getName() {
@@ -141,6 +168,52 @@ public abstract class Obj{
     
     public boolean use(Obj usr){
         return false;
+    }
+    
+    @Override
+    public boolean canHold(Obj obj){
+        if (obj instanceof Item){
+            Item item = (Item) obj;
+            if (getHoldTypes().contains(item.getName().toLowerCase())){
+                return true;
+            }
+        }
+        return false;
+    };
+    
+    /**
+     *
+     * @return
+     */
+    @Override
+    public ArrayList<Obj> getContents(){
+        return this.contents;
+    };
+    
+    @Override
+    public boolean add(Obj obj){
+        
+        //Make sure we have an inventory before adding to it.
+        if(getContents() == null){
+            contents = new ArrayList<>();
+        }
+        contents.add(obj);
+        return true;
+    };
+    
+    /**
+     *
+     * @param obj
+     * @return
+     */
+    @Override
+    public boolean remove(Obj obj){
+        if (contents.contains(obj)) {
+            contents.remove(obj);
+            return true;
+        } else {
+            return false;
+        }
     }
     
 }

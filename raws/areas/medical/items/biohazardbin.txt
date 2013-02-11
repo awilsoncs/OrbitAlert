@@ -1,0 +1,4 @@
+item
+name/Biohazard Bin
+shortDescription/There is a biohazard bin on the floor.
+longDescription/A sticker labeled “Medical Waste” lies across the bin’s orange surface. The bin is filled with sealed red bags.

@@ -1,0 +1,3 @@
+room
+name/Monitoring
+description/Screens line the walls displaying the status of the green house fans, Oxygen produce rate, temperature, and oxygen reserves. Loose wrappers and stale coffee cups litter the screen’s consoles.

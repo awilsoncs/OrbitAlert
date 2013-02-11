@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/A fluorescent light fixture hangs limply from the ceiling, the light casting moving shadows along the corridor.

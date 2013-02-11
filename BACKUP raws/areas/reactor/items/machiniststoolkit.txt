@@ -1,0 +1,4 @@
+item
+name/Machinist's Toolkit
+shortDescription/A hand held toolbox sits on the floor.
+longDescription/The contents of the grey, metal, toolbox is in chaos. Tools such as screwdrivers, wrenches, and wire cutters can be glimpsed amongst the scattered screws and greasy bolts.

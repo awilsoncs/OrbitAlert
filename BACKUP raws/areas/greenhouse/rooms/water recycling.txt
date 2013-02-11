@@ -1,0 +1,3 @@
+room
+name/Greenhouse: Water Recycling
+description/Cold nips at the dim room bathed in a soft glow from the massive water pool. Consoles stretch from wall to wall. Deep inside the pool, recycling takes place.

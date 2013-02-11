@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/A water pipe has torn through the ceiling. Though water no longer pours, the passage is lightly flooded. A fully functional light fixture dangles from the ceiling, inches from the water’s surface.

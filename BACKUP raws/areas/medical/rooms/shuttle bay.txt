@@ -1,0 +1,3 @@
+room
+name/Medical Bay: Shuttle Bay
+description/The heat, from the burning wreckage of an Ambulance Shuttle, is stifling. The circular, metallic, room is littered with charred debris. The gathering smoke slowly seeps away into the ventilation.

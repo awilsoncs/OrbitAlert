@@ -1,0 +1,3 @@
+room
+name/Hangar: Hangar Bay
+description/The boxy transports, that resemble a train cart more than anything else, burn in a neat line. The area around them littered with bent and twisted metal and shattered glass.

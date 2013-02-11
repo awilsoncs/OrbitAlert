@@ -1,0 +1,3 @@
+room
+name/Medical Bay: Surgery
+description/The stinging fragrance of disinfectant is heavy. Two steel surgical tables stand quietly on opposite ends of the room. The large bodies of precision surgical lasers hang idly from the metallic ceiling.

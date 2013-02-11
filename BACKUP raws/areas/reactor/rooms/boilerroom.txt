@@ -1,0 +1,3 @@
+room
+name/Reactor: Boiler Room
+description/A hiss of steam escapes somewhere along the pipes that run along the shadowed ceiling and into the massive cylinder shaped boilers that line the stifling room. Red bulbs blink along the railings of the grated walkways atop the boilers.

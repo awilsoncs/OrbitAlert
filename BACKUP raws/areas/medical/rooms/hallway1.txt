@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/Darkness stretches across the floor grating. Only the dim illumination of floor lights mark the path forward.

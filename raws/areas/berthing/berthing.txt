@@ -1,0 +1,4 @@
+area
+type/berthing
+name/Berthing Commons
+description/With each flicker of the fluorescent lights there is a flash of crimson staining the surface of the rounded, white, walls of the Berthing Commons. The air is tainted with a strong salty scent. Thick bits of blood and flesh are sprayed across the ceiling and ivory colored tile floors. Whatever took place happened some time ago. The gore caked across the jumble of overturned chairs and flipped coffee tables is already darkened and coagulated. Amongst the surviving ceiling lights, fixtures hang limply, littering shattered bulbs and crumpled ceiling tiles atop the bloody chaos below. In one of the walls a massive screen hangs, half the screen shattered in a rainbow pixilation the other half strives to display the continued loop of a calming scene of a warm crackling fire.

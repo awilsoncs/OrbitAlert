@@ -195,6 +195,9 @@ public abstract class Mob extends Obj implements Container {
         //Moves the item into the Mob's loc.
         Container newLoc = getLoc();
         boolean result = item.move(newLoc);
+        String newShortDescription = "A " + item.getName().toLowerCase() +
+                 " has been discarded here. ";
+        item.setShortDescription(newShortDescription);
         return result;
     };
     
@@ -212,7 +215,6 @@ public abstract class Mob extends Obj implements Container {
                     String.valueOf(obj.hashCode()).equals(itemName)){
                 if(obj.getClass() == Item.class){
                     Item item = (Item) obj;
-                    System.out.println("Dropping the item");
                     return drop(item);
                 }
             }
@@ -237,46 +239,6 @@ public abstract class Mob extends Obj implements Container {
             return false;
         }
     };
-    
-    /**
-     *
-     * @return
-     */
-    @Override
-    public ArrayList<Obj> getContents(){
-        return this.contents;
-    };
-    
-    /**
-     *
-     * @param obj
-     * @return
-     */
-    @Override
-    public boolean add(Obj obj){
-        
-        //Make sure we have an inventory before adding to it.
-        if(getContents() == null){
-            contents = new ArrayList<>();
-        }
-        contents.add(obj);
-        return true;
-    };
-    
-    /**
-     *
-     * @param obj
-     * @return
-     */
-    @Override
-    public boolean remove(Obj obj){
-        if (contents.contains(obj)) {
-            contents.remove(obj);
-            return true;
-        } else {
-            return false;
-        }
-    }
     
     //Environment interaction
     //Need to consider how the Mob can interact with the environment.

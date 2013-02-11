@@ -1,0 +1,3 @@
+room
+name/Berthing: Lead Officer’s Quarters
+description/A queen sized bed rests against the back wall. Soft music plays from the surface of a large desk off to the side. The room is bathed in the soft blue glow of a large aquarium in the wall. Dead fish float limply at the top.

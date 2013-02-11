@@ -1,0 +1,4 @@
+item
+name/Fertilizer
+shortDescription/Burlap sacks of fertilizer sit, stacked, against the wall.
+longDescription/The fertilizer is stacked several feet high. A strong pungent scent emanates from beneath the rough skin of the beige sacks

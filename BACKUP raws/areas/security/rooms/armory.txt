@@ -1,0 +1,3 @@
+room
+name/Security: Armory
+description/Steel plated gun shelves stood along the perimeter of the armory’s white walls. Most of the weapons and armor are missing.

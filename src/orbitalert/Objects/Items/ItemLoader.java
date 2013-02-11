@@ -21,12 +21,15 @@ public class ItemLoader {
     public static String chooseItemFile(String areaType){
         String path = OrbitAlert.getOrbitAlertPath();
         File itemsFile = new File(path + "/raws/areas/" + areaType + "/items/");
-        ArrayList<String> itemTypes = new ArrayList<>(
+        if(itemsFile.exists()){
+            ArrayList<String> itemTypes = new ArrayList<>(
                 Arrays.asList(itemsFile.list()));
-        int random = (int) (Math.random() * itemTypes.size());
-        String itemType = itemTypes.get(random);
-        itemType = itemType.substring(0,itemType.lastIndexOf(".txt"));
-        return itemType;
+            int random = (int) (Math.random() * itemTypes.size());
+            String itemType = itemTypes.get(random);
+            itemType = itemType.substring(0,itemType.lastIndexOf(".txt"));
+            return itemType;
+        }
+        return null;
     }
     
     public static Item loadItem(String areaType) {
@@ -38,20 +41,23 @@ public class ItemLoader {
             String path = OrbitAlert.getOrbitAlertPath();
             File itemFile = new File(path + "/raws/areas/" + areaType 
                     + "/items/" + itemType + ".txt");
-            
-            FileReader fileReader = new FileReader(itemFile);
-            BufferedReader reader = new BufferedReader(fileReader);
+            if(itemFile.exists()){
+                FileReader fileReader = new FileReader(itemFile);
+                BufferedReader reader = new BufferedReader(fileReader);
 
-            String line;
-            HashMap<String, String> itemAttributes = new HashMap<>();
-            while (( line = reader.readLine()) != null){
-                ArrayList<String> keyValuePair = new ArrayList<>(Arrays.asList(line.split("/")));
-                if (keyValuePair.size() > 1){
-                    itemAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
+                String line;
+                HashMap<String, String> itemAttributes = new HashMap<>();
+                while (( line = reader.readLine()) != null){
+                    ArrayList<String> keyValuePair = new ArrayList<>(Arrays.asList(line.split("/")));
+                    if (keyValuePair.size() > 1){
+                        itemAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
+                    }
                 }
+                reader.close();
+                return new Item(itemAttributes);
+            } else {
+                return null;
             }
-            reader.close();
-            return new Item(itemAttributes);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
