@@ -45,8 +45,11 @@ public class ItemFactory {
             String areaType, ArrayList<String> itemTypes){
         
         ArrayList<Item> itemList = new ArrayList<>();
-        int itemCount = (int) ((Math.random() * 4) + (Math.random() * 2));
-        itemCount = itemCount - 3;
+        int itemCount = (int) ((Math.random() * 7)
+                + (Math.random() * 7)
+                + (Math.random() * 7));
+        System.out.println(String.valueOf(itemCount));
+        itemCount = itemCount - 10;
         
         for(; itemCount > 0; itemCount--){
             int random = (int) (Math.random() * itemTypes.size());
