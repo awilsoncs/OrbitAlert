@@ -1,0 +1,3 @@
+room
+name/Hangar: Door Controls
+description/The room is bathed in a flashing red light. Above the control consoles every screen has the same flashing message: “Door Control Override. Quarantine Procedure in effect.”

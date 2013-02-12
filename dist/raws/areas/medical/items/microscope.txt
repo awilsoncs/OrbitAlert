@@ -1,0 +1,4 @@
+item
+name/Microscope
+short/A microscope rests atop the table.
+long/The small lens, that hovers above an empty glass slate, stretches up and attaches to the back of a blank screen.

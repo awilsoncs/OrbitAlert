@@ -1,0 +1,3 @@
+room
+name/Science Ward: Geology
+description/The green mist is thick. It lays open the tables and trays of geological specimens. The mist makes it difficult for one to breathe and burns at the flesh. A low, guttural, giggling emerges from within the mist and echoes off the walls.

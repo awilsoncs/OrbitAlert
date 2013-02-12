@@ -1,0 +1,3 @@
+name/Lockers
+short/A row of lockers are pressed up against the wall.
+long/Each of the metal lockers have a small keypad lock.

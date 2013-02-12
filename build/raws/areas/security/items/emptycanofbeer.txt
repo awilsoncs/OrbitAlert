@@ -1,0 +1,3 @@
+name/Empty Can of Beer
+short/A silver can lays on the floor.
+long/Blocked letters across the silver surface of the empty can simply state: “Beer”.

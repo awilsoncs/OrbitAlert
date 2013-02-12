@@ -1,0 +1,3 @@
+name/Empty Pack of Cigarettes
+short/A crumpled paper box is on the floor.
+long/The balled up blue and white box seems to be an empty pack of cigarettes.

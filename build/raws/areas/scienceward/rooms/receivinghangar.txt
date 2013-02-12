@@ -1,0 +1,3 @@
+room
+name/Science Ward: Receiving Hangar
+description/The large hangar door is shut against the vacuum of space. Metal palates of barrels and plastic wrapped supplies wait to be distributed to their rightful areas. The metal floor, where a transport would land, is peppered with bits of sand and gravel. They seem to glow green in the light of the hanger.

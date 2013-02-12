@@ -1,0 +1,3 @@
+name/Pack of Cigarettes
+short/There’s a pack of cigarettes on the floor.
+long/A row of silver filtered cigarettes remain in the blue and white box.

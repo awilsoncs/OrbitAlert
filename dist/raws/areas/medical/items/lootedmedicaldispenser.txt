@@ -1,0 +1,5 @@
+item
+name/Looted Medical Dispenser
+shortDescription/A medicine dispenser is pressed up against the wall.
+longDescription//Behind the shattered glass door of the Dispenser are missing trays of medicine and loose pills. A disregarded security console sits connected to the left.
+

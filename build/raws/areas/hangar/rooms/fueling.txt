@@ -1,0 +1,3 @@
+room
+name/Hangar: Fueling
+description/A large tank, stretching from floor to ceiling, takes up most of the back wall. Large coils of extendable hoses lay neatly in front of the tank; Some hoses are still connected to the spouts along the bottom of the fuel tank, laying sprawled out across the floor.

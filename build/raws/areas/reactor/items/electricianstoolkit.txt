@@ -1,0 +1,4 @@
+item
+name/Electrician’s Tool Kit
+short/A hand held tool bag rests on the floor.
+long/The small red bag’s pockets are filled with the tools an electrician would use such as wire strippers, screwdrivers, pliers, and a voltage sensor.

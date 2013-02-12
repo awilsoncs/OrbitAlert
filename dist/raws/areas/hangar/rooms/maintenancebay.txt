@@ -1,0 +1,3 @@
+room
+name/Hangar: Maintenance Bay
+description/A Transport rests in the center of the bay, its plating removed. Stripped down to its guts, jumbles of wiring and the square frame of the transport is visible. Racks pressed up against the walls stretch to the ceiling, massive pieces of transport parts resting neatly.

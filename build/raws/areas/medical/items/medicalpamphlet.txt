@@ -1,0 +1,4 @@
+item
+name/Medical Pamphlet
+shortDescription/A medical pamphlet is abandoned to the floor.
+longDescription/“The Snap of a Glove: A Doctor’s Guide to Rectal Examinations” is printed in block letters across the thin, white, paperback.

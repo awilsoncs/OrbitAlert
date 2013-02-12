@@ -1,0 +1,4 @@
+item
+name/Medical Research Book
+shortDescription/A book lies sprawled out on the floor.
+longDescription/The large, thin, paperbacks cover reads: “An Epidemic: The Rapid Spread of STDs Among Space Colonies”

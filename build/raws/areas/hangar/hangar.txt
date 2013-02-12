@@ -1,0 +1,4 @@
+area
+type/hangar
+name/Launch Bay
+decsription/The gagging bitter smell of burning flesh lingers as smoke billows from the center of the hangar. Over a dozen transports that would have been docked now smolder in charred ruin. Bodies litter the boarding section. Not all of them are charred remains; many lay sprawled across the floor in pools of blood or slumped up against the wall. Spent bullet shells are scattered along the steel plated floors. Charred globs of flesh hang from railings and are splattered across the floors and walls. It seems there were people on board several of the transports when they exploded. This place is coated with the blood of those that may have only been trying to escape with their lives.

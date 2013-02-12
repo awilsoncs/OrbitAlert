@@ -1,0 +1,4 @@
+item
+name/Brain Model
+shortDescription/A human brain sits on a desk next to a half eaten sandwich.
+longDescription/The model brain is made up of four pieces and its regions are sectioned off and color coded.

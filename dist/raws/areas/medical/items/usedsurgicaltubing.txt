@@ -1,0 +1,4 @@
+item
+name/Used Surgical Tubing
+short/Surgical tubing lies uncoiled on the floor.
+long/The thin Latex tube is unrolled and has a pungent smell coming off it. It’s likely the tubing has been used medicinally… as a catheter, maybe.

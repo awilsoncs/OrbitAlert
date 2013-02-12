@@ -1,0 +1,6 @@
+item
+wearable/true
+getable/true
+name/Used Latex Gloves
+shortDescription/Latex gloves are bunched up on the floor.
+longDescription/The light blue gloves are stretched out and torn at the wrist. Odd colors are smeared across the fingers and palms.

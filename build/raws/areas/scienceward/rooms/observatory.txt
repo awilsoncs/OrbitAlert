@@ -1,0 +1,3 @@
+room
+name/Science Ward: Observatory
+description/The red emergency lights fill the dark room. Along the walls are dozens of screens depicting images of suns and celestial bodies. Below the screens are the control consoles for the telescope in the foyer.

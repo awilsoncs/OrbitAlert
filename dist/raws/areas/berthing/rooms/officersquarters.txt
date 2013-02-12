@@ -1,0 +1,3 @@
+room
+name/Berthing: Officer’s Quarters
+description/Bunk Beds, lined up neatly, fill the room. Beneath the beds are two trunks, most likely for personal belongings. Strewn blankets hang of the beds and lie limp on the floor. A voice coldly repeats the emergency message over the intercom: “ Warning. Unstable orbit Vector… Warning…”

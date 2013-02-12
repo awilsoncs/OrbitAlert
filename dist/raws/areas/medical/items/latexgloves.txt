@@ -1,0 +1,6 @@
+item
+getable/true
+wearable/true
+name/Latex Gloves
+shortDescription/Gloves droop limply over the edge of a small cart.
+longDescription/The light blue gloves are tiny and scrunched up; they seem to be fresh out of the box.

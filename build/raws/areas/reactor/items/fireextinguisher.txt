@@ -1,0 +1,3 @@
+name/Fire Extinguisher
+short/A fire extinguisher hangs from the wall.
+long/The scarlet fire extinguisher stands out from the dull metal wall.

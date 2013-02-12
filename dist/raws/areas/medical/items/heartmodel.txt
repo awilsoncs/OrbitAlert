@@ -1,0 +1,4 @@
+item
+name/Heart Model
+short/A human heart is lying on the floor.
+long/The large model heart is made up of several sections. Each section is color coded and removable.

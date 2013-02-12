@@ -1,0 +1,4 @@
+item
+name/Surgical Tubing
+shortDescription/Surgical tubing sits up on a shelf along the wall.
+longDescription/The thin, beige, latex tubing is rolled up tightly and wrapped in plastic to keep from contamination.

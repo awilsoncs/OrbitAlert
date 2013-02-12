@@ -1,0 +1,3 @@
+name/Mug
+short/A surviving mug rests on the floor.
+long/The tall baby blue mug has The words: “Happy living on The Neptune” across its surface. 
