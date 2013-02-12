@@ -31,9 +31,6 @@ public class Map  {
         if (getRoom(cell) == null) {            
             roomMap.put(cell, room);            
             cellMap.put(room, cell);
-        } else {
-            GameHelper.output(
-                    "Error: Attempting to write room in non-null cell.");
         }
     }
 

@@ -38,9 +38,17 @@ public abstract class RoomLoader {
     public static Room loadRoom(String areaType, String roomText){
         try {
             String path = OrbitAlert.getOrbitAlertPath();
-            File roomFile = new File(path + "/raws/areas/" + areaType 
+            
+            //The main room of an area is in the main area folder, not the
+            //not the rooms folder.
+            File roomFile;
+            if (roomText.equals("main")){
+                roomFile = new File(path + "/raws/areas/" + areaType
+                        + "/" + areaType + ".txt");
+            } else {
+                roomFile = new File(path + "/raws/areas/" + areaType 
                     + "/rooms/" + roomText + ".txt");
-                    
+            }                    
             FileReader fileReader = new FileReader(roomFile);
             Room newRoom;
             try (BufferedReader reader = new BufferedReader(fileReader)) {

@@ -31,13 +31,14 @@ public class MapFactory {
         Map newMap = new Map(mapSize);
 
         //Load and create a new MedBay area.
-        Area newArea = AreaLoader.loadArea("medical");
+        Area startArea = AreaLoader.loadArea("medical");
+        newMap.addRoom(startCell, startArea.makeRoom("main"));
         
         //Start a recursive build on newMap.
         newMap = buildMap(newMap,
                 startCell,
                 startCell,
-                newArea,
+                startArea,
                 PATH_DEPTH_ROOMS);
         
         return newMap;
@@ -55,8 +56,6 @@ public class MapFactory {
         
         //Random check to see if a new Area should be started.
         int roll = (int) (Math.random() * 100);
-        System.out.println("Total: " + String.valueOf(MAXIMUM_ROOMS_TOTAL));
-        System.out.println("Path Depth: " + String.valueOf(depthCount));
         if (area.getAreaRooms().size() >= MINIMUM_ROOMS_PER_AREA
                 && roll <= NEW_AREA_CHANCE) {
             //Start a new area.
@@ -64,7 +63,7 @@ public class MapFactory {
             area = AreaLoader.loadArea();
             
             //Build this cell as a new room in the new area.
-            newRoom = area.makeRoom();
+            newRoom = area.makeRoom("main");
             map.addRoom(currentCell, newRoom);
             
             //Create a new task, and then link the rooms together, locked by

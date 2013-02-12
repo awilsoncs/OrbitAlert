@@ -96,4 +96,14 @@ public class Area {
         setAreaRooms(rooms);
         return newRoom;
     };
+    
+    public Room makeRoom(String roomType){
+        RoomFactory roomFactory = new RoomFactory();
+        Room newRoom = roomFactory.getRoom(type, roomType);
+        
+        ArrayList<Room> rooms = getAreaRooms();
+        rooms.add(newRoom);
+        setAreaRooms(rooms);
+        return newRoom;
+    }
 }
