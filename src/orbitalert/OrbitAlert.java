@@ -19,35 +19,39 @@ public class OrbitAlert {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        for (String arg : args) {
-            if(arg.equals("play")){
-                World newWorld = WorldFactory.getWorld(
-                    new Cell(4,4,4));
-                GameHelper.startGame(newWorld);
-            }
-            if(arg.equals("worldtest")){
-                OrbitAlert game = new OrbitAlert();
-                game.worldTest();
-            }
-            if(arg.equals("areatest")){
-                OrbitAlert game = new OrbitAlert();
-                game.areaTest();
-            }
-            if(arg.equals("itemtest")){
-                OrbitAlert game = new OrbitAlert();
-                game.itemTest();
-            }
-            if(arg.equals("gamehelpertest")){
-                gameHelperTest();
-            }
-            if(arg.equals("maptest")){
-                mapTest();
-            }
-            if(arg.equals("containeritemtest")){
-                containerItemTest();
-            }
-        }        
+        World newWorld = WorldFactory.getWorld(
+                new Cell(4,4,4));
+        GameHelper.startGame(newWorld);
     }
+//        for (String arg : args) {
+//            if(arg.equals("play")){
+//                World newWorld = WorldFactory.getWorld(
+//                    new Cell(4,4,4));
+//                GameHelper.startGame(newWorld);
+//            }
+//            if(arg.equals("worldtest")){
+//                OrbitAlert game = new OrbitAlert();
+//                game.worldTest();
+//            }
+//            if(arg.equals("areatest")){
+//                OrbitAlert game = new OrbitAlert();
+//                game.areaTest();
+//            }
+//            if(arg.equals("itemtest")){
+//                OrbitAlert game = new OrbitAlert();
+//                game.itemTest();
+//            }
+//            if(arg.equals("gamehelpertest")){
+//                gameHelperTest();
+//            }
+//            if(arg.equals("maptest")){
+//                mapTest();
+//            }
+//            if(arg.equals("containeritemtest")){
+//                containerItemTest();
+//            }
+//        }        
+//    }
     private static void mapTest() {
         Cell cell1 = new Cell(1,1,1);
         Cell cell2 = new Cell(1,1,1);

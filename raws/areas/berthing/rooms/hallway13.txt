@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/Pluming from the grating at the center of the corridor, green mist slowly invades the passage.

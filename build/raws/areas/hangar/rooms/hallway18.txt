@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/The salty, coppery, smell of blood fills the pitch dark corridor. The floor is slippery beneath one’s feet. Perhaps it is good that the lights don’t work .

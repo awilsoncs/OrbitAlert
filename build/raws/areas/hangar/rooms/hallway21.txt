@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/Shattered bulbs litter the white tiled floors of the passage, they shine subtly in the Hatch light’s illumination.

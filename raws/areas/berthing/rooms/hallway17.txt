@@ -1,0 +1,3 @@
+room
+name/Hallway
+description/The chill of the corridor has created a thin layer of frost along the grating and across the surface of the white paneled walls.
