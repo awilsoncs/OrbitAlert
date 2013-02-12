@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package orbitalert.Objects.Items;
 
 import java.io.BufferedReader;
@@ -43,23 +39,22 @@ public class ItemLoader {
                     + "/items/" + itemType + ".txt");
             if(itemFile.exists()){
                 FileReader fileReader = new FileReader(itemFile);
-                BufferedReader reader = new BufferedReader(fileReader);
-
-                String line;
-                HashMap<String, String> itemAttributes = new HashMap<>();
-                while (( line = reader.readLine()) != null){
-                    ArrayList<String> keyValuePair = new ArrayList<>(Arrays.asList(line.split("/")));
-                    if (keyValuePair.size() > 1){
-                        itemAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
+                HashMap<String, String> itemAttributes;
+                try (BufferedReader reader = new BufferedReader(fileReader)) {
+                    String line;
+                    itemAttributes = new HashMap<>();
+                    while (( line = reader.readLine()) != null){
+                        ArrayList<String> keyValuePair = new ArrayList<>(Arrays.asList(line.split("/")));
+                        if (keyValuePair.size() > 1){
+                            itemAttributes.put(keyValuePair.get(0), keyValuePair.get(1));
+                        }
                     }
                 }
-                reader.close();
                 return new Item(itemAttributes);
             } else {
                 return null;
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
         }
         return null;
     }

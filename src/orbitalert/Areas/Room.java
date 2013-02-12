@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package orbitalert.Areas;
 
 import java.util.ArrayList;
@@ -16,9 +12,9 @@ import orbitalert.Task;
  */
 public class Room implements Container {
 
-    private String roomName;
-    private String parentAreaType;
-    private String roomDescription;
+    private String name;
+    private String areaType;
+    private String description;
     private ArrayList<Obj> contents;
     private HashMap<String, Exit> exitMap;
     //HashMap exit list
@@ -29,35 +25,43 @@ public class Room implements Container {
             ArrayList<Obj> newContents,
             HashMap<String, Exit> newExitMap
             ) {
-        setName(roomAttributes.get("name"));
-        setDescription(roomAttributes.get("description"));
-        setParentAreaType(parentArea);
+        name = roomAttributes.get("name");
+        description = roomAttributes.get("description");
+        areaType = parentArea;
         exitMap = newExitMap;
         contents = newContents;
     }
 
-    public void setParentAreaType(String type){
-        parentAreaType = type;
-    }
-    
-    public String getParentAreaType(){
-        return parentAreaType;
-    }
-    
-    public void setName(String name) {
-        roomName = name;
-    }
-
     public String getName() {
-        return roomName;
+        return name;
     }
 
-    public void setDescription(String newDesc) {
-        roomDescription = newDesc;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAreaType() {
+        return areaType;
+    }
+
+    public void setAreaType(String areaType) {
+        this.areaType = areaType;
     }
 
     public String getDescription() {
-        return roomDescription;
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public HashMap<String, Exit> getExitMap() {
+        return exitMap;
+    }
+
+    public void setExitMap(HashMap<String, Exit> exitMap) {
+        this.exitMap = exitMap;
     }
 
     @Override

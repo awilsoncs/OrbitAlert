@@ -9,21 +9,20 @@ import orbitalert.World;
  * @author Aaron
  */
 public abstract class Obj implements Container
-
 {
-    Container loc;
-    ArrayList<Obj> contents;
-    ArrayList<String> holdTypes;
-    boolean getable = false;
-    boolean wieldable = false;
-    boolean wearable = false;
-    boolean active = false;
-    boolean moveable = false;
-    boolean useable = false;
-    boolean container = false;
-    String name;
-    String shortDescription;
-    String longDescription;
+    private Container loc;
+    private ArrayList<Obj> contents;
+    private ArrayList<String> holdTypes;
+    private boolean getable = false;
+    private boolean wieldable = false;
+    private boolean wearable = false;
+    private boolean active = false;
+    private boolean moveable = false;
+    private boolean useable = false;
+    private boolean container = false;
+    private String name;
+    private String shortDescription;
+    private String longDescription;
     private World world;
 
     public Container getLoc() {

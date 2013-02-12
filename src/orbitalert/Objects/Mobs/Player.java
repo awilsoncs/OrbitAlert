@@ -11,12 +11,12 @@ import orbitalert.GameHelper;
  * @author Aaron
  */
 public class Player extends Mob {
-    ActionParser actionParser;
+    private ActionParser actionParser;
     
     public Player(){
         setName("Player");
         setActive(true);
-        setActionParser(new ActionParser());
+        actionParser = new ActionParser();
     }
     /**
      *
@@ -36,10 +36,18 @@ public class Player extends Mob {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public ActionParser getActionParser() {
         return actionParser;
     }
 
+    /**
+     *
+     * @param actionParser
+     */
     public void setActionParser(ActionParser actionParser) {
         this.actionParser = actionParser;
     }

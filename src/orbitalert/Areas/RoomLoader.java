@@ -31,7 +31,6 @@ public abstract class RoomLoader {
             roomType = roomType.substring(0,roomType.lastIndexOf(".txt"));
             return roomType;
         } catch (Exception ex) {
-            ex.printStackTrace();            
         }
         return null;
     }
@@ -43,28 +42,25 @@ public abstract class RoomLoader {
                     + "/rooms/" + roomText + ".txt");
                     
             FileReader fileReader = new FileReader(roomFile);
-            BufferedReader reader = new BufferedReader(fileReader);
-
-            String line;
-            HashMap<String, String> roomAttributes = new HashMap<>();
-            while (( line = reader.readLine()) != null){
-                ArrayList<String> keyValuePair = new ArrayList<>(
-                        Arrays.asList(line.split("/")));
-                if (keyValuePair.size() > 1){
-                    roomAttributes.put(
-                            keyValuePair.get(0), keyValuePair.get(1));
+            Room newRoom;
+            try (BufferedReader reader = new BufferedReader(fileReader)) {
+                String line;
+                HashMap<String, String> roomAttributes = new HashMap<>();
+                while (( line = reader.readLine()) != null){
+                    ArrayList<String> keyValuePair = new ArrayList<>(
+                            Arrays.asList(line.split("/")));
+                    if (keyValuePair.size() > 1){
+                        roomAttributes.put(
+                                keyValuePair.get(0), keyValuePair.get(1));
+                    }
                 }
+                HashMap<String, Exit> newExitMap = new HashMap<>();
+                ArrayList<Obj> newObjList = new ArrayList<>();
+                newRoom = new Room(roomAttributes,
+                   areaType, newObjList, newExitMap);
             }
-            
-            HashMap<String, Exit> newExitMap = new HashMap<>();
-            ArrayList<Obj> newObjList = new ArrayList<>();
-            
-            Room newRoom = new Room(roomAttributes,
-                    areaType, newObjList, newExitMap);
-            reader.close();
             return newRoom;
         } catch (Exception ex) {
-            ex.printStackTrace();
         }
         return null;
     }
