@@ -31,6 +31,9 @@ public class ItemFactory {
             item.setContents(new ArrayList<Obj>());
             item.getContents().addAll(
                     getItemsForContainer(areaType, item.getHoldTypes()));
+            for(Obj content:item.getContents()){
+                content.setLoc(item);
+            }
         }
         return item;
     };
@@ -45,11 +48,11 @@ public class ItemFactory {
             String areaType, ArrayList<String> itemTypes){
         
         ArrayList<Item> itemList = new ArrayList<>();
-        int itemCount = (int) ((Math.random() * 7)
-                + (Math.random() * 7)
-                + (Math.random() * 7));
-        System.out.println(String.valueOf(itemCount));
-        itemCount = itemCount - 10;
+        int itemCount = (int) 1;
+//                ((Math.random() * 7)
+//                + (Math.random() * 7)
+//                + (Math.random() * 7));
+//        itemCount = itemCount - 10;
         
         for(; itemCount > 0; itemCount--){
             int random = (int) (Math.random() * itemTypes.size());

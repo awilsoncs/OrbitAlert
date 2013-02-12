@@ -1,3 +1,0 @@
-room
-name/Medical Bay: Supply Closet
-description/The dark closet contains metal shelves that line the walls where unused, plastic wrapped, medical supplies sit.

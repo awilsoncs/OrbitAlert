@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/Green mist has completely invaded the corridor, the florescent light giving it a soft glow. It stings the flesh and burns at one’s eyes.

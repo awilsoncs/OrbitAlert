@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/Metallic groans cut through the pitch darkness. Only the lights on the hatch ahead glow softly, a pair of dim eyes in the dark.

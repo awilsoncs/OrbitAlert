@@ -1,4 +1,0 @@
-item
-name/test item please ignore
-shortDescription/TEST ITEM
-longDescription/TEST ITEM

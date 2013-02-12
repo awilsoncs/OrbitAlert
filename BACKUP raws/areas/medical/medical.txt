@@ -1,4 +1,0 @@
-area
-type/medical
-name/Medical Bay
-description/Clinically white fluorescent light from above flashes throughout the area splashing sporadic illumination across the surface of dull metallic walls. The subtle stale smell of disinfectant lingers throughout. A constant slow drip, from a nearby faucet, cuts through the stifling silence, echoing sharply. Embedded into the steel tiles of the floor is a large window. The thick layers of silicate glass hold back the eager vacuum of the expansive void on the outer side of the window, the darkness peppered with pinpricks of far off light. The subtle stale smell of disinfectant lingers. A check-in desk sits idly in the center of the area. Recovery beds, which seemed at one time to have been organized along the perimeter of the area now lay thrown, flipped, and pushed into a chaotic jumble.

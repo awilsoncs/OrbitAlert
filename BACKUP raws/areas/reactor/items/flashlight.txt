@@ -1,4 +1,0 @@
-item
-name/Flashlight
-shortDescription/A flash lights sits on a small table against one of the walls.
-longDescription/A large, grey, handle protrudes out of the top of the flashlight’s boxy body.

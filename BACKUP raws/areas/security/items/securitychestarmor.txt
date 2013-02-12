@@ -1,4 +1,0 @@
-item
-name/Security Chest Armor
-shortDescription/The black and white chest armor hangs from a peg in the wall.
-longDescription/“Neptune Security Force” is emblazoned across the back and chest of the blue and white chest armor. A hardened plate protrudes out of the chest and flows down towards the stomach, armoring the wear’s vital organs.

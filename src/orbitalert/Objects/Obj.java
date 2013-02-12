@@ -136,11 +136,10 @@ public abstract class Obj implements Container
     }
 
     public boolean move(Container container) {
-        if (container.canHold(this) == true){
+        if (container.canHold(this)){
             Container currentLoc = getLoc();
             currentLoc.remove(this);
             container.add(this);
-            this.setLoc(container);
             return true;
         } else {
             return false;
@@ -198,6 +197,7 @@ public abstract class Obj implements Container
             contents = new ArrayList<>();
         }
         contents.add(obj);
+        obj.setLoc(this);
         return true;
     };
     
@@ -208,8 +208,9 @@ public abstract class Obj implements Container
      */
     @Override
     public boolean remove(Obj obj){
-        if (contents.contains(obj)) {
+        if (contents != null && contents.contains(obj)) {
             contents.remove(obj);
+            obj.setLoc(null);
             return true;
         } else {
             return false;

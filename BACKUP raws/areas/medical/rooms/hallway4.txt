@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/The passage is bathed in the red glow of the emergency lights the grating along the passage is twisted and bent upward.

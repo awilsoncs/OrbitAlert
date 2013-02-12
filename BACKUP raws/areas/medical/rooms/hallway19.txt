@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/Silence has taken the corridor, turning any minute sound into a thundering noise.

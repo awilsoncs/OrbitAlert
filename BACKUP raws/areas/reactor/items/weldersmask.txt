@@ -1,4 +1,0 @@
-item
-name/Welder's Mask
-shortDescription/A welder’s mask sits on a shelf along the wall.
-longDescription/Embedded into the black metal face of the mask is a dark, heavily tinted, window.

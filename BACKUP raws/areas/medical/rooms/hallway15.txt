@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/Blood is splattered and smeared along the well lit corridor’s white paneled walls, stretching towards the opposite hatch.

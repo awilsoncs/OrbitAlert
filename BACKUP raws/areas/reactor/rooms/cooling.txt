@@ -1,3 +1,0 @@
-room
-name/Reactor: Cooling
-description/Along the back wall is a massive screen displaying the pipes that lead into the pool and the water level of the reactor. A stout console beneath it runs the length of the wall.

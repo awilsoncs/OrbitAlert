@@ -1,4 +1,0 @@
-item
-name/Freeze Dry
-shortDescription/Packages of freeze dried produce sit on shelves along the wall.
-longDescription/Block letters run along the surface of the silver package, naming the different fruit or vegetable it contains.

@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/The lights along the corridor flash on and off sporadically, turning the passage into a negative print.

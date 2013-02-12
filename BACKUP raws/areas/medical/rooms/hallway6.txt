@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/A blanket of darkness lies along the corridor. The harsh electric pops from broken light fixtures spark off a flashes of illumination.

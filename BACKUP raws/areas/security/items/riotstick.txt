@@ -1,4 +1,0 @@
-item
-name/Riot Stick
-shortDescription/A riot stick rests on the surface of a desk.
-longDescription/The thick steel of the riot stick extends almost two feet outward from its thick black grip. The steel tip is balled to inflict maximum force.

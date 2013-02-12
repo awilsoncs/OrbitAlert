@@ -1,40 +1,43 @@
 package orbitalert.Actions;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  *
  * @author Aaron
  */
 public class ActionParser {
     public Action parseAction(String actionString){
-        String[] parsedAction = actionString.split(" ");
-        if(parsedAction.length > 0){
-            switch (parsedAction[0]){
+        List<String> parsedAction = Arrays.asList(actionString.split(" "));
+        if(parsedAction.size() > 0){
+            switch (parsedAction.get(0)){
                 case "exit": System.exit(1);
                 case "quit": System.exit(1);
-                case "info":
-                    if (parsedAction.length > 1){
-                        return new InfoAction(parsedAction[1]);
-                    } else {
-                        return new InfoAction("here");
+//                case "info":
+//                    if (parsedAction.size() > 1){
+//                        return new InfoAction(parsedAction.get(1));
+//                    } else {
+//                        return new InfoAction("here");
+//                    }
+                case "get":
+                    if (parsedAction.size() > 1){
+                        return new GetAction(
+                                parsedAction.subList(1,parsedAction.size()));
                     }
-//                case "get":
-//                    if (parsedAction.length > 1){
-//                        get(parsedAction[1]);
-//                    }
-//                    break;
-//                case "drop":
-//                    if (parsedAction.length > 1){
-//                        drop(parsedAction[1]);
-//                    }
-//                    break;
-//                case "walk":
-//                    if (parsedAction.length > 1){
-//                        return new WalkAction(parsedAction[1]);
-//                    }
-//                case "go":
-//                    if (parsedAction.length > 1){
-//                        return new WalkAction(parsedAction[1]);
-//                    }
+////                case "drop":
+////                    if (parsedAction.length > 1){
+////                        drop(parsedAction[1]);
+////                    }
+////                    break;
+                case "walk":
+                    if (parsedAction.size() > 1){
+                        return new WalkAction(parsedAction.get(1));
+                    }
+                case "go":
+                    if (parsedAction.size() > 1){
+                        return new WalkAction(parsedAction.get(1));
+                    }
                 case "north":   return new WalkAction("north");
                 case "east":    return new WalkAction("east");
                 case "west":    return new WalkAction("west");

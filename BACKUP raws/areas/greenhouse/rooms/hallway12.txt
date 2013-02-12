@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/Green mist seeps through from the ceiling vents and hugs the light fixtures, casting an emerald glow along the corridor.

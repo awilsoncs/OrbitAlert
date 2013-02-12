@@ -1,3 +1,0 @@
-room
-name/Security: Barracks
-description/Uncomfortable looking beds fill the room lined up along the white walls. Bright splatters of blood stand out against the soothing ebony color of the barracks.

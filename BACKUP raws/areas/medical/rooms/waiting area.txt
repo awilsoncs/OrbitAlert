@@ -1,3 +1,0 @@
-room
-name/Medical Bay: Waiting Area
-description/Embedded along the walls are dull metal benches with plush cushions protruding from the seats. A pleasant jingle emanates from speakers in the ceiling.

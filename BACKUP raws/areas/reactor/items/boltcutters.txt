@@ -1,4 +1,0 @@
-item
-name/Bolt Cutters
-shortDescription/A large set of bolt cutters lean against the wall.
-longDescription/debug

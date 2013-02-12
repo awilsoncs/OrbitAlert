@@ -1,3 +1,0 @@
-room
-name/Bridge: Mission Information Center
-description/A flashing red light fills the room. A hologram of the Neptune, as well as the surrounding space and orbit vector, is projected in the center of the room. A cold voice urgently repeats: “Warning. Unstable Orbit Vector…”

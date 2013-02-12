@@ -1,3 +1,0 @@
-room
-name/Greenhouse: Storage
-description/The room is filled with supplies needed to work and cultivate the oxygen farm.

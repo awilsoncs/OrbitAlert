@@ -1,3 +1,0 @@
-room
-name/Greenhouse: Produce
-description/The room is bathed in red. Water runs down the walls sinking into the soil. Vegetables and small fruit trees sprout up from beneath the clear floor.

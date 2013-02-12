@@ -1,4 +1,0 @@
-item
-name/Welder
-shortDescription/A welder is pushed up against a wall.
-longDescription/The welder is stretches out from a large heavy yellow generator. Two clamps connected by wires lie sprawled across the floor.

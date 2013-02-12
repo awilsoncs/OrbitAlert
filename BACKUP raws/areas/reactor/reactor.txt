@@ -1,4 +1,0 @@
-area
-type/reactor
-name/Reactor
-description/The bright metallic walls reflect the illuminated ripples of the massive pool in the center of the area, the air swimming with fluid streaks of light. The walls shutter and the floor noticeably trembles. Dozens of steel pipes make their way from holes in the ceiling, down the domed walls, and into the depths of the glowing water. The surface of the pool bubbles and ripples, steam pluming up into the air. Below the water two massive steel rings rapidly spin within each other at its center a hot ball of blue glowing light pulsates each time the rings intersect. The Neptune’s Heart…

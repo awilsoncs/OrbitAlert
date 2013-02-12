@@ -1,3 +1,0 @@
-room
-name/Hallway
-description/Thick blood outlines the corridor’s grating. Splattered blood along the light fixtures gives the passage a scarlet glow.

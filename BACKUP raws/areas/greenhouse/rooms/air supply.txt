@@ -1,3 +1,0 @@
-room
-name/Greenhouse: Air Supply
-description/The room is filled with stout computer consoles measuring the energy input and oxygen intake of the oxygen farm that is the Greenhouse.

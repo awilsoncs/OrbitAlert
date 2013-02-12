@@ -5,7 +5,7 @@
 package orbitalert.Areas;
 
 import orbitalert.Objects.Items.Item;
-import orbitalert.Objects.Items.ItemLoader;
+import orbitalert.Objects.Items.ItemFactory;
 
 /**
  *
@@ -26,7 +26,8 @@ public class RoomFactory {
     private void addItems(Room room, String areaType){
         int numberOfItems = (int) ((Math.random() * 2) + Math.random() * 1);
         for (;numberOfItems > 0; numberOfItems--){
-            Item newItem = ItemLoader.loadItem(areaType);
+            ItemFactory itemFactory = new ItemFactory();
+            Item newItem = itemFactory.getItem(areaType);
             room.add(newItem);
         }
     }

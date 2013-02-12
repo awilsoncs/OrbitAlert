@@ -1,4 +1,0 @@
-item
-name/Seedling
-shortDescription/A seedling sits neatly against the wall.
-longDescription/The tiny leafy body curls out of the potted dirt and stretches upward.

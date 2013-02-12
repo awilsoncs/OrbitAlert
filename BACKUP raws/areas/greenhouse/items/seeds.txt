@@ -1,4 +1,0 @@
-item
-name/Seeds
-shortDescription/A crate of seeds sits in the corner.
-longDescription/The transparent bag is filled with an overwhelming amount of seeds.

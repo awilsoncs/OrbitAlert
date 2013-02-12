@@ -1,3 +1,0 @@
-room
-name/Medical Bay: Diagnostic Room
-description/Two massive lamps peer down onto a large white table, the molding of a human body sunk into its surface. A sheet of light, from the sparking head of a hanging diagnostic machine, scans back and forth across the table’s surface.
