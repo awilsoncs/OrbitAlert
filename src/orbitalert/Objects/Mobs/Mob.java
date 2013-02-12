@@ -193,12 +193,15 @@ public abstract class Mob extends Obj implements Container {
      */
     public boolean drop(Item item){
         //Moves the item into the Mob's loc.
-        Container newLoc = getLoc();
-        boolean result = item.move(newLoc);
-        String newShortDescription = "A " + item.getName().toLowerCase() +
-                 " has been discarded here. ";
-        item.setShortDescription(newShortDescription);
-        return result;
+        if(getContents() != null){
+            Container newLoc = getLoc();
+            boolean result = item.move(newLoc);
+            String newShortDescription = "A " + item.getName().toLowerCase() +
+                     " has been discarded here. ";
+            item.setShortDescription(newShortDescription);
+            return result;
+        }
+        return false;
     };
     
     /**
@@ -207,20 +210,23 @@ public abstract class Mob extends Obj implements Container {
      * @return
      */
     public boolean drop(String itemName){
-        for (Obj obj:getContents()){
+        if(getContents() != null){
+            for (Obj obj:getContents()){
             String objName = obj.getName().toLowerCase();
             itemName = itemName.toLowerCase();
             
-            if(objName.equals(itemName) ||
-                    String.valueOf(obj.hashCode()).equals(itemName)){
-                if(obj.getClass() == Item.class){
-                    Item item = (Item) obj;
-                    return drop(item);
+                if(objName.equals(itemName) ||
+                        String.valueOf(obj.hashCode()).equals(itemName)){
+                    if(obj.getClass() == Item.class){
+                        Item item = (Item) obj;
+                        return drop(item);
+                    }
                 }
             }
         }
         return false;
     }
+        
     
     private boolean use(Item item){
         return false;

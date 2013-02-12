@@ -14,22 +14,26 @@ public class ActionParser {
             switch (parsedAction.get(0)){
                 case "exit": System.exit(1);
                 case "quit": System.exit(1);
-//                case "info":
-//                    if (parsedAction.size() > 1){
-//                        return new InfoAction(parsedAction.get(1));
-//                    } else {
-//                        return new InfoAction("here");
-//                    }
+                case "info":
+                    if (parsedAction.size() > 1){
+                        return new InfoAction(
+                                parsedAction.subList(1,parsedAction.size()));
+                    } else {
+                        return new InfoAction("here");
+                    }
+                case "inv": return new InfoAction("inv");
+                case "inventory": return new InfoAction("inv");
                 case "get":
                     if (parsedAction.size() > 1){
                         return new GetAction(
                                 parsedAction.subList(1,parsedAction.size()));
                     }
-////                case "drop":
-////                    if (parsedAction.length > 1){
-////                        drop(parsedAction[1]);
-////                    }
-////                    break;
+                case "drop":
+                    if (parsedAction.size() > 1){
+                        return new DropAction(
+                                parsedAction.subList(1,parsedAction.size()));
+                    }
+                    break;
                 case "walk":
                     if (parsedAction.size() > 1){
                         return new WalkAction(parsedAction.get(1));
