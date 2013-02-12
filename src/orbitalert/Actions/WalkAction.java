@@ -14,7 +14,7 @@ public class WalkAction implements Action {
     private String direction;
     
     public WalkAction(String direction){
-        setDirection(direction);
+        this.direction = direction;
     }
 
     public String getDirection() {

@@ -2,6 +2,7 @@ package orbitalert.Areas;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import orbitalert.World;
 
 /**
@@ -9,8 +10,8 @@ import orbitalert.World;
  * @author Aaron
  */
 public class Area {
-    private String areaName;
-    private String areaDescription;
+    private String name;
+    private String description;
     private String type;
     private int areaDifficulty;
     private ArrayList<Room> areaRooms;
@@ -24,11 +25,59 @@ public class Area {
     }
     
     public Area(HashMap<String, String> areaAttributes){
-        setName(areaAttributes.get("name"));
-        setDescription(areaAttributes.get("description"));
-        setType(areaAttributes.get("type"));
+        name = areaAttributes.get("name");
+        description = areaAttributes.get("description");
+        type =  areaAttributes.get("type");
         areaRooms = new ArrayList<>();
         areaDamagedRooms = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getAreaDifficulty() {
+        return areaDifficulty;
+    }
+
+    public void setAreaDifficulty(int areaDifficulty) {
+        this.areaDifficulty = areaDifficulty;
+    }
+
+    public ArrayList<Room> getAreaRooms() {
+        return areaRooms;
+    }
+
+    public void setAreaRooms(ArrayList<Room> areaRooms) {
+        this.areaRooms = areaRooms;
+    }
+
+    public ArrayList<Room> getAreaDamagedRooms() {
+        return areaDamagedRooms;
+    }
+
+    public void setAreaDamagedRooms(ArrayList<Room> areaDamagedRooms) {
+        this.areaDamagedRooms = areaDamagedRooms;
     }
 
     public World getWorld() {
@@ -39,49 +88,13 @@ public class Area {
         this.world = world;
     }
     
-    public void setType(String newType){
-        type = newType;
-    }
-    
-    public String getType(){
-        return type;
-    }
-    
-    private int getDifficulty() {
-        return areaDifficulty;
-    }
-
-    public void setName(String name) {
-        areaName = name;
-    }
-    public String getName() {
-        return areaName;
-    }
-    public void setDescription(String description){
-        areaDescription = description;
-    }
-    public String getDescription() {
-        return areaDescription;
-    }
-    public void addRoom(Room room) {
-        areaRooms.add(room);
-    }
-    public ArrayList<Room> getRooms() {
-        return areaRooms;
-    }
-    
-    public ArrayList<Room> getDamagedRooms() {
-        return areaDamagedRooms;
-    }
-
-   // public ArrayList<Mob> getMobs() {
-   //     return this.areaMobs;
-   // }
-    
     public Room makeRoom(){
         RoomFactory roomFactory = new RoomFactory();
         Room newRoom = roomFactory.getRoom(type);
-        addRoom(newRoom);
+        
+        ArrayList<Room> rooms = getAreaRooms();
+        rooms.add(newRoom);
+        setAreaRooms(rooms);
         return newRoom;
     };
 }

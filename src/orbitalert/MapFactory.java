@@ -57,7 +57,7 @@ public class MapFactory {
         int roll = (int) (Math.random() * 100);
         System.out.println("Total: " + String.valueOf(MAXIMUM_ROOMS_TOTAL));
         System.out.println("Path Depth: " + String.valueOf(depthCount));
-        if (area.getRooms().size() >= MINIMUM_ROOMS_PER_AREA
+        if (area.getAreaRooms().size() >= MINIMUM_ROOMS_PER_AREA
                 && roll <= NEW_AREA_CHANCE) {
             //Start a new area.
             Area oldArea = area;
