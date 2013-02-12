@@ -27,6 +27,7 @@ public class GameHelper {
      * @param output
      */
     public static void output(String output) {
+        System.out.println("\n");
         System.out.println(WordUtils.wrap(output, DEFAULT_WORD_WRAP));
     }
 
