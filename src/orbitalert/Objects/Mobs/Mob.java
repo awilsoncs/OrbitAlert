@@ -20,33 +20,28 @@ public abstract class Mob extends Obj implements Container {
     private int actionsPerTick;
     private int attackDamage;
     private int damageReduction;
-    boolean canAttack;
-    boolean canBeAttacked;
-    ArrayList<Obj> contents;
-    //ArrayList<Equipable> worn;
-    //ArrayList<Equipable> wielded;
-    String[] entersRoomPhrases;
-    String[] leavesRoomPhrases;
-    String[] attackPhrases;
-    String[] damagedPhrases;
-    String[] diesPhrases;
-    String[] phrases;
+    private boolean canAttack;
+    private boolean canBeAttacked;
+    private ArrayList<Obj> contents;
+    private ArrayList<Item> worn;
+    private ArrayList<Item> wielded;
+    private String[] entersRoomPhrases;
+    private String[] leavesRoomPhrases;
+    private String[] attackPhrases;
+    private String[] damagedPhrases;
+    private String[] diesPhrases;
+    private String[] phrases;
     private World world;
 
-
-    //State Control
-    /**
-     *
-     * @return
-     */
-    public int getHealth(){
+    public int getHealth() {
         return health;
-    };
+    }
+
     /**
-     *
-     * @param newHealth
-     * @return
-     */
+    *
+    * @param newHealth
+    * @return
+    */
     public boolean setHealth(int newHealth){
         if (newHealth >= 0) {
             health = newHealth;
@@ -54,7 +49,112 @@ public abstract class Mob extends Obj implements Container {
         } else {
             return false;
         }
-    };
+    }
+
+    public int getActionsPerTick() {
+        return actionsPerTick;
+    }
+
+    public void setActionsPerTick(int actionsPerTick) {
+        this.actionsPerTick = actionsPerTick;
+    }
+
+    public int getAttackDamage() {
+        return attackDamage;
+    }
+
+    public void setAttackDamage(int attackDamage) {
+        this.attackDamage = attackDamage;
+    }
+
+    public int getDamageReduction() {
+        return damageReduction;
+    }
+
+    public void setDamageReduction(int damageReduction) {
+        this.damageReduction = damageReduction;
+    }
+
+    public boolean isCanAttack() {
+        return canAttack;
+    }
+
+    public void setCanAttack(boolean canAttack) {
+        this.canAttack = canAttack;
+    }
+
+    public boolean isCanBeAttacked() {
+        return canBeAttacked;
+    }
+
+    public void setCanBeAttacked(boolean canBeAttacked) {
+        this.canBeAttacked = canBeAttacked;
+    }
+
+    public ArrayList<Item> getWorn() {
+        return worn;
+    }
+
+    public void setWorn(ArrayList<Item> worn) {
+        this.worn = worn;
+    }
+
+    public ArrayList<Item> getWielded() {
+        return wielded;
+    }
+
+    public void setWielded(ArrayList<Item> wielded) {
+        this.wielded = wielded;
+    }
+
+    public String[] getEntersRoomPhrases() {
+        return entersRoomPhrases;
+    }
+
+    public void setEntersRoomPhrases(String[] entersRoomPhrases) {
+        this.entersRoomPhrases = entersRoomPhrases;
+    }
+
+    public String[] getLeavesRoomPhrases() {
+        return leavesRoomPhrases;
+    }
+
+    public void setLeavesRoomPhrases(String[] leavesRoomPhrases) {
+        this.leavesRoomPhrases = leavesRoomPhrases;
+    }
+
+    public String[] getAttackPhrases() {
+        return attackPhrases;
+    }
+
+    public void setAttackPhrases(String[] attackPhrases) {
+        this.attackPhrases = attackPhrases;
+    }
+
+    public String[] getDamagedPhrases() {
+        return damagedPhrases;
+    }
+
+    public void setDamagedPhrases(String[] damagedPhrases) {
+        this.damagedPhrases = damagedPhrases;
+    }
+
+    public String[] getDiesPhrases() {
+        return diesPhrases;
+    }
+
+    public void setDiesPhrases(String[] diesPhrases) {
+        this.diesPhrases = diesPhrases;
+    }
+
+    public String[] getPhrases() {
+        return phrases;
+    }
+
+    public void setPhrases(String[] phrases) {
+        this.phrases = phrases;
+    }
+   
     @Override
     public void tick(){
         behavior();
@@ -245,14 +345,4 @@ public abstract class Mob extends Obj implements Container {
             return false;
         }
     };
-    
-    //Environment interaction
-    //Need to consider how the Mob can interact with the environment.
-    //Social (Cosmetic)
-    //private String getEntersRoomPhrase(){};
-    //private String getLeavesRoomPhrase(){};
-    //private String getAttackPhrase(){};
-    //private String getDamagedPhrase(){};
-    //private String getDiesPhrase(){};
-    //private String getPhrase(){};
 }
