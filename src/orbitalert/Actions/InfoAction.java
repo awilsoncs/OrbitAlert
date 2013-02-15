@@ -22,11 +22,6 @@ public class InfoAction extends SearchingAction {
     
     @Override
     public boolean execute(Mob usr){
-        //Security check, make sure the caller is a player.
-        if(usr.getClass() == Player.class)
-        {
-            return false;
-        }
         //Assume the player is looking for an item in this room.
         Container loc = usr.getLoc();
         //There are several exceptions for info that may not be items.
