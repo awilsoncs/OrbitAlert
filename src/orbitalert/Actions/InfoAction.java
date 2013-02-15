@@ -12,14 +12,12 @@ import orbitalert.Objects.Obj;
  * @author Aaron
  */
 public class InfoAction extends SearchingAction {
+    static {
+        ActionParser actionParser = ActionParser.getActionParser();
+        actionParser.registerProduct("info", InfoAction.class);
+    }    
     
-    public InfoAction(String target){
-        setTarget(target);
-    }
-    
-    public InfoAction(List<String> parsedString){
-        parseSearch(parsedString);
-    }
+    public InfoAction(){};
     
     @Override
     public boolean execute(Mob usr){

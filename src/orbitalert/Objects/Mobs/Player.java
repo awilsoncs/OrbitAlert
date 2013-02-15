@@ -16,7 +16,7 @@ public class Player extends Mob {
     public Player(){
         setName("Player");
         setActive(true);
-        actionParser = new ActionParser();
+        actionParser = ActionParser.getActionParser();
     }
     /**
      *

@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import orbitalert.Areas.Room;
 import orbitalert.Areas.RoomFactory;
 import orbitalert.Objects.Items.Item;
@@ -15,6 +17,18 @@ import orbitalert.Objects.Obj;
  * @author Aaron
  */
 public class OrbitAlert {
+    
+    static {
+        try {
+            Class.forName("orbitalert.Actions.DropAction");
+            Class.forName("orbitalert.Actions.GetAction");
+            Class.forName("orbitalert.Actions.InfoAction");
+            Class.forName("orbitalert.Actions.WalkAction");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(OrbitAlert.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

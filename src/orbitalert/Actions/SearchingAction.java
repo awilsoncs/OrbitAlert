@@ -13,6 +13,11 @@ public abstract class SearchingAction implements Action {
     private String target;
     private String targetContainer;
     
+    @Override
+    public void build(List<String> actionString){
+        parseSearch(actionString);
+    }
+    
     protected String buildTarget(String target) {
         return target.toLowerCase().replaceAll("\\s", "");
     }

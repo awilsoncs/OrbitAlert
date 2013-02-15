@@ -1,6 +1,9 @@
 package orbitalert.Actions;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -8,48 +11,42 @@ import java.util.List;
  * @author Aaron
  */
 public class ActionParser {
+    private static ActionParser actionParser;
+    private HashMap m_RegisteredActions = new HashMap();
+    
+    private ActionParser(){};
+    
+    public static synchronized ActionParser getActionParser()
+    {
+        if (actionParser == null){
+            actionParser = new ActionParser();
+        }
+        return actionParser;
+    }
+    
+    public void registerProduct (String actionID, Class actionClass)
+    {
+        m_RegisteredActions.put(actionID, actionClass);
+    }
+    
+    public Action createAction (String actionID) {
+        Class actionClass = (Class) m_RegisteredActions.get(actionID);
+        try {
+            Constructor actionConstructor = actionClass.getConstructor();
+            return (Action) actionConstructor.newInstance();
+        } catch (NoSuchMethodException 
+                | SecurityException 
+                | InstantiationException 
+                | IllegalAccessException 
+                | IllegalArgumentException 
+                | InvocationTargetException ex){}
+        return null;
+    }
+    
     public Action parseAction(String actionString){
         List<String> parsedAction = Arrays.asList(actionString.split(" "));
-        if(parsedAction.size() > 0){
-            switch (parsedAction.get(0)){
-                case "exit": System.exit(1);
-                case "quit": System.exit(1);
-                case "info":
-                    if (parsedAction.size() > 1){
-                        return new InfoAction(
-                                parsedAction.subList(1,parsedAction.size()));
-                    } else {
-                        return new InfoAction("here");
-                    }
-                case "inv": return new InfoAction("inv");
-                case "inventory": return new InfoAction("inv");
-                case "get":
-                    if (parsedAction.size() > 1){
-                        return new GetAction(
-                                parsedAction.subList(1,parsedAction.size()));
-                    }
-                case "drop":
-                    if (parsedAction.size() > 1){
-                        return new DropAction(
-                                parsedAction.subList(1,parsedAction.size()));
-                    }
-                    break;
-                case "walk":
-                    if (parsedAction.size() > 1){
-                        return new WalkAction(parsedAction.get(1));
-                    }
-                case "go":
-                    if (parsedAction.size() > 1){
-                        return new WalkAction(parsedAction.get(1));
-                    }
-                case "north":   return new WalkAction("north");
-                case "east":    return new WalkAction("east");
-                case "west":    return new WalkAction("west");
-                case "south":   return new WalkAction("south");
-                case "up":      return new WalkAction("up");
-                case "down":    return new WalkAction("down");
-            }
-        }
-        return null;
+        Action newAction = createAction(parsedAction.get(0));
+        newAction.build(parsedAction.subList(1,parsedAction.size()));
+        return newAction;
     }
 }

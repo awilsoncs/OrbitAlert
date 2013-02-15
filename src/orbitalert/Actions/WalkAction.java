@@ -4,6 +4,7 @@
  */
 package orbitalert.Actions;
 
+import java.util.List;
 import orbitalert.Objects.Mobs.Mob;
 
 /**
@@ -12,6 +13,19 @@ import orbitalert.Objects.Mobs.Mob;
  */
 public class WalkAction implements Action {
     private String direction;
+    
+    static {
+        ActionParser actionParser = ActionParser.getActionParser();
+        actionParser.registerProduct("walk", WalkAction.class);
+        actionParser.registerProduct("go", WalkAction.class);
+    }
+    
+    public WalkAction(){};
+    
+    @Override
+    public void build(List<String> actionString){
+        direction = actionString.get(0);
+    };
     
     public WalkAction(String direction){
         this.direction = direction;

@@ -4,7 +4,6 @@
  */
 package orbitalert.Actions;
 
-import java.util.List;
 import orbitalert.Objects.Items.Item;
 import orbitalert.Objects.Mobs.Mob;
 import orbitalert.Objects.Obj;
@@ -14,9 +13,13 @@ import orbitalert.Objects.Obj;
  * @author Aaron
  */
 public class DropAction extends SearchingAction {
-    public DropAction(List<String> parsedString){
-        parseSearch(parsedString);
+    
+    static {
+        ActionParser actionParser = ActionParser.getActionParser();
+        actionParser.registerProduct("drop", DropAction.class);
     }
+    
+    public DropAction(){};
     
     /**
      *

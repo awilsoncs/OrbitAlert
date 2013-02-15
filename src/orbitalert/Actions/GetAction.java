@@ -4,7 +4,6 @@
  */
 package orbitalert.Actions;
 
-import java.util.List;
 import orbitalert.Objects.Container;
 import orbitalert.Objects.Items.Item;
 import orbitalert.Objects.Mobs.Mob;
@@ -16,9 +15,12 @@ import orbitalert.Objects.Obj;
  */
 public class GetAction extends SearchingAction {
     
-    public GetAction(List<String> parsedString){
-        parseSearch(parsedString);
+    static {
+        ActionParser actionParser = ActionParser.getActionParser();
+        actionParser.registerProduct("get", GetAction.class);
     }
+    
+    public GetAction(){};
     
     @Override
     public boolean execute(Mob usr) {
