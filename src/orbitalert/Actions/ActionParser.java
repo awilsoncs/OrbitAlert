@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class ActionParser {
     private static ActionParser actionParser;
-    private HashMap m_RegisteredActions = new HashMap();
+    private HashMap registeredActions = new HashMap();
     
     private ActionParser(){};
     
@@ -27,11 +27,11 @@ public class ActionParser {
     
     public void registerProduct (String actionID, Class actionClass)
     {
-        m_RegisteredActions.put(actionID, actionClass);
+        registeredActions.put(actionID, actionClass);
     }
     
-    public Action createAction (String actionID) {
-        Class actionClass = (Class) m_RegisteredActions.get(actionID);
+    private Action createAction (String actionID) {
+        Class actionClass = (Class) registeredActions.get(actionID);
         if (actionClass != null) {
             try 
             {
@@ -47,11 +47,17 @@ public class ActionParser {
         return null;
     }
     
+    /**
+     *
+     * @param actionString
+     * @return
+     */
     public Action parseAction(String actionString)
     {
         List<String> parsedAction = Arrays.asList(actionString.split(" "));
         Action newAction = createAction(parsedAction.get(0));
-        if (newAction != null) {
+        if (newAction != null) 
+        {
             newAction.build(parsedAction);
             return newAction;
         }
