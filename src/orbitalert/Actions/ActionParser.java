@@ -63,4 +63,12 @@ public class ActionParser {
         }
         return null;
     }
+
+    public HashMap getRegisteredActions() {
+        return registeredActions;
+    }
+
+    public void setRegisteredActions(HashMap registeredActions) {
+        this.registeredActions = registeredActions;
+    }
 }
