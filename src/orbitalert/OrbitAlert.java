@@ -25,6 +25,11 @@ public class OrbitAlert {
             Class.forName("orbitalert.Actions.InfoAction");
             Class.forName("orbitalert.Actions.WalkAction");
             Class.forName("orbitalert.Actions.QuitAction");
+            
+            Class.forName("orbitalert.Actions.WieldAction");
+            Class.forName("orbitalert.Actions.UnwieldAction");
+            Class.forName("orbitalert.Actions.WearAction");
+            Class.forName("orbitalert.Actions.RemoveAction");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(OrbitAlert.class.getName()).log(Level.SEVERE, null, ex);
         }
