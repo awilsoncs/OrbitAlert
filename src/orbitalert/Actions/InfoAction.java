@@ -15,6 +15,7 @@ public class InfoAction extends SearchingAction {
     static {
         ActionParser actionParser = ActionParser.getActionParser();
         actionParser.registerProduct("info", InfoAction.class);
+        actionParser.registerProduct("IH", InfoAction.class);
     }    
     
     public InfoAction(){};
@@ -22,13 +23,10 @@ public class InfoAction extends SearchingAction {
     @Override
     public boolean execute(Mob usr){
         //Security check, make sure the caller is a player.
-        if(usr.getClass() == Player.class){
-            Player player = (Player) usr;
-        } else {
-            //This should not be called by a non-player.
+        if(usr.getClass() == Player.class)
+        {
             return false;
         }
-        
         //Assume the player is looking for an item in this room.
         Container loc = usr.getLoc();
         //There are several exceptions for info that may not be items.

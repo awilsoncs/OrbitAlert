@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package orbitalert.Actions;
 
 import orbitalert.Objects.Items.Item;
@@ -14,7 +10,8 @@ import orbitalert.Objects.Obj;
  */
 public class DropAction extends SearchingAction {
     
-    static {
+    static 
+    {
         ActionParser actionParser = ActionParser.getActionParser();
         actionParser.registerProduct("drop", DropAction.class);
     }
@@ -27,9 +24,11 @@ public class DropAction extends SearchingAction {
      * @return
      */
     @Override
-    public boolean execute(Mob usr){
+    public boolean execute(Mob usr)
+    {
         Obj obj = search(getTarget(), usr);
-        if (obj != null && obj.getClass() == Item.class){
+        if (obj != null && obj.getClass() == Item.class)
+        {
             Item item = (Item) obj;
             usr.drop(item);
             return true;
