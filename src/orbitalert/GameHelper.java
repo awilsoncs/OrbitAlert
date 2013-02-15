@@ -9,7 +9,6 @@ import org.apache.commons.lang3.text.WordUtils;
  * @author Aaron
  */
 public class GameHelper {
-    static int DEFAULT_WORD_WRAP = 80;
     /**
      *
      * @param world
@@ -28,7 +27,7 @@ public class GameHelper {
      */
     public static void output(String output) {
         System.out.println("\n");
-        System.out.println(WordUtils.wrap(output, DEFAULT_WORD_WRAP));
+        System.out.println(WordUtils.wrap(output, Config.getConfig().getWordWrap()));
     }
 
     /**

@@ -22,7 +22,7 @@ public class WorldFactory {
         Cell startCell = new Cell(startX, startY, startZ);
         
         //Build the map
-        MapFactory mapFactory = new MapFactory();
+        MapFactory mapFactory = MapFactory.getMapFactory();
         Map map = mapFactory.getMap(mapSize,
                 startCell);
         

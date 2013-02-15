@@ -88,7 +88,7 @@ public class Area {
     }
     
     public Room makeRoom(){
-        RoomFactory roomFactory = new RoomFactory();
+        RoomFactory roomFactory = RoomFactory.getRoomFactory();
         Room newRoom = roomFactory.getRoom(type);
         
         ArrayList<Room> rooms = getAreaRooms();
@@ -98,7 +98,7 @@ public class Area {
     };
     
     public Room makeRoom(String roomType){
-        RoomFactory roomFactory = new RoomFactory();
+        RoomFactory roomFactory = RoomFactory.getRoomFactory();
         Room newRoom = roomFactory.getRoom(type, roomType);
         
         ArrayList<Room> rooms = getAreaRooms();

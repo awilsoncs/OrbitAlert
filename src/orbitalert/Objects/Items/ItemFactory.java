@@ -8,6 +8,20 @@ import orbitalert.Objects.Obj;
  * @author Aaron
  */
 public class ItemFactory {
+    private static ItemFactory itemFactory;
+    
+    private ItemFactory(){};
+    
+    /**
+     *
+     * @return
+     */
+    public static synchronized ItemFactory getItemFactory(){
+        if (itemFactory == null){
+            itemFactory = new ItemFactory();
+        }
+        return itemFactory;
+    }
     
     /**
      *

@@ -10,11 +10,29 @@ import orbitalert.Areas.Room;
  * @author Aaron
  */
 public class MapFactory {
+    private static MapFactory mapFactory;
     static int MAXIMUM_ROOMS_TOTAL = 80;
     static int MINIMUM_ROOMS_PER_AREA = 4;
     static int NEW_AREA_CHANCE = 25;
     static int PATH_DEPTH_ROOMS = 8;
     static int TRAVERSAL_CHANCE = 70;
+    
+    
+    private MapFactory(){
+        Config config = Config.getConfig();
+        MAXIMUM_ROOMS_TOTAL = config.getMaximumRoomsTotal();
+        MINIMUM_ROOMS_PER_AREA = config.getMinimumRoomsPerArea();
+        NEW_AREA_CHANCE = config.getNewAreaChance();
+        PATH_DEPTH_ROOMS = config.getMaxRoomsPerPath();
+        TRAVERSAL_CHANCE = config.getTraversalChance();
+    }
+    
+    public static MapFactory getMapFactory(){
+        if (mapFactory == null){
+            mapFactory = new MapFactory();
+        }
+        return mapFactory;
+    }
     
     /**
      *

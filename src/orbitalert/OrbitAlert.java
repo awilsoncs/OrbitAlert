@@ -61,7 +61,7 @@ public class OrbitAlert {
         
         Map map = new Map(new Cell(1,1,1));
         
-        RoomFactory roomFactory = new RoomFactory();
+        RoomFactory roomFactory = RoomFactory.getRoomFactory();
         Room room1 = roomFactory.getRoom("medical", "surgery");
         Room room2 = roomFactory.getRoom("medical", "hallway1");
         
@@ -86,7 +86,7 @@ public class OrbitAlert {
     }
     
     private static void containerItemTest(){
-        ItemFactory itemFactory = new ItemFactory();
+        ItemFactory itemFactory = ItemFactory.getItemFactory();
         Item item = itemFactory.getItem("medical", "dufflebag");
         ArrayList<Obj> contents = item.getContents();
         for(Obj obj:contents){
