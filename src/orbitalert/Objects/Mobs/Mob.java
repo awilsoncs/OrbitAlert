@@ -24,7 +24,7 @@ public abstract class Mob extends Obj implements Container {
     private boolean canBeAttacked;
     private ArrayList<Obj> contents;
     private ArrayList<Item> worn;
-    private ArrayList<Item> wielded;
+    private Item wielded;
     private String[] entersRoomPhrases;
     private String[] leavesRoomPhrases;
     private String[] attackPhrases;
@@ -99,11 +99,11 @@ public abstract class Mob extends Obj implements Container {
         this.worn = worn;
     }
 
-    public ArrayList<Item> getWielded() {
+    public Item getWielded() {
         return wielded;
     }
 
-    public void setWielded(ArrayList<Item> wielded) {
+    public void setWielded(Item wielded) {
         this.wielded = wielded;
     }
 
@@ -345,4 +345,56 @@ public abstract class Mob extends Obj implements Container {
             return false;
         }
     };
+    
+    public boolean wear(Item item)
+    {
+        if (item != null && item.isWearable())
+        {   
+            if (contents == null){
+                contents = new ArrayList<>();
+            }
+            if (!contents.contains(item)){
+                item.move(this);
+                return wear(item);
+            } else {
+                worn.add(item);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean remove(Item item){
+        if (item != null && worn.contains(item)){
+            worn.remove(item);
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean wield(Item item)
+    {
+        if (item != null && item.isWieldable()){
+            if (contents == null){
+                contents = new ArrayList<>();
+            }
+            if (!contents.contains(item)){
+                item.move(this);
+                return wield(item);
+            } else {
+                wielded = item;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean unwield(Item item)
+    {
+        if (item != null && wielded == item){
+            wielded = null;
+            return true;
+        }
+        return false;
+    }
 }
