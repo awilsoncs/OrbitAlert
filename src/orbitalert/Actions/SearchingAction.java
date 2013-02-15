@@ -15,7 +15,7 @@ public abstract class SearchingAction implements Action {
     
     @Override
     public void build(List<String> actionString){
-        parseSearch(actionString);
+        parseSearch(actionString.subList(1, actionString.size()));
     }
     
     protected String buildTarget(String target) {

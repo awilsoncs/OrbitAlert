@@ -18,7 +18,8 @@ public class ActionParser {
     
     public static synchronized ActionParser getActionParser()
     {
-        if (actionParser == null){
+        if (actionParser == null)
+        {
             actionParser = new ActionParser();
         }
         return actionParser;
@@ -31,22 +32,29 @@ public class ActionParser {
     
     public Action createAction (String actionID) {
         Class actionClass = (Class) m_RegisteredActions.get(actionID);
-        try {
-            Constructor actionConstructor = actionClass.getConstructor();
-            return (Action) actionConstructor.newInstance();
-        } catch (NoSuchMethodException 
-                | SecurityException 
-                | InstantiationException 
-                | IllegalAccessException 
-                | IllegalArgumentException 
-                | InvocationTargetException ex){}
+        if (actionClass != null) {
+            try 
+            {
+                Constructor actionConstructor = actionClass.getConstructor();
+                return (Action) actionConstructor.newInstance();
+            } catch (NoSuchMethodException 
+                    | SecurityException 
+                    | InstantiationException 
+                    | IllegalAccessException 
+                    | IllegalArgumentException 
+                    | InvocationTargetException ex){}
+            }
         return null;
     }
     
-    public Action parseAction(String actionString){
+    public Action parseAction(String actionString)
+    {
         List<String> parsedAction = Arrays.asList(actionString.split(" "));
         Action newAction = createAction(parsedAction.get(0));
-        newAction.build(parsedAction.subList(1,parsedAction.size()));
-        return newAction;
+        if (newAction != null) {
+            newAction.build(parsedAction);
+            return newAction;
+        }
+        return null;
     }
 }

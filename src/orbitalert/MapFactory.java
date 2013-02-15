@@ -11,11 +11,11 @@ import orbitalert.Areas.Room;
  */
 public class MapFactory {
     private static MapFactory mapFactory;
-    static int MAXIMUM_ROOMS_TOTAL = 80;
-    static int MINIMUM_ROOMS_PER_AREA = 4;
-    static int NEW_AREA_CHANCE = 25;
-    static int PATH_DEPTH_ROOMS = 8;
-    static int TRAVERSAL_CHANCE = 70;
+    static int MAXIMUM_ROOMS_TOTAL;
+    static int MINIMUM_ROOMS_PER_AREA;
+    static int NEW_AREA_CHANCE;
+    static int PATH_DEPTH_ROOMS;
+    static int TRAVERSAL_CHANCE;
     
     
     private MapFactory(){

@@ -18,13 +18,23 @@ public class WalkAction implements Action {
         ActionParser actionParser = ActionParser.getActionParser();
         actionParser.registerProduct("walk", WalkAction.class);
         actionParser.registerProduct("go", WalkAction.class);
+        actionParser.registerProduct("north", WalkAction.class);
+        actionParser.registerProduct("west", WalkAction.class);
+        actionParser.registerProduct("east", WalkAction.class);
+        actionParser.registerProduct("south", WalkAction.class);
+        actionParser.registerProduct("up", WalkAction.class);
+        actionParser.registerProduct("down", WalkAction.class);
     }
     
     public WalkAction(){};
     
     @Override
     public void build(List<String> actionString){
-        direction = actionString.get(0);
+        if (actionString.size() > 1){
+            direction = actionString.get(1);
+        } else {
+            direction = actionString.get(0);
+        }
     };
     
     public WalkAction(String direction){
